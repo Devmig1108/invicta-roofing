@@ -1862,3 +1862,42 @@ h3 { line-height: 1.08; font-size: 1.28rem; letter-spacing: -.02em; }
     gap: 0;
   }
 }
+
+
+/* PHP form processing additions */
+.website-verification-wrap {
+  position: absolute !important;
+  left: -10000px !important;
+  top: auto !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.form-status {
+  padding: 14px 16px;
+  border-radius: 16px;
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.form-status-success {
+  color: #14532d;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+}
+
+.form-status-error {
+  color: #7f1d1d;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+}
+
+.turnstile-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 4px 0 2px;
+}

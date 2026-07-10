@@ -1,3 +1,92 @@
+<?php
+$formDebug = defined('FORM_DEBUG') ? (bool) FORM_DEBUG : false;
+
+function loadSecureEnvForGiveawayPage(): void
+{
+    static $loaded = false;
+
+    if ($loaded) {
+        return;
+    }
+
+    $possiblePaths = [
+        __DIR__ . '/../config/secure_env.php',
+        __DIR__ . '/../../config/secure_env.php',
+        __DIR__ . '/config/secure_env.php',
+        isset($_SERVER['DOCUMENT_ROOT'])
+            ? rtrim($_SERVER['DOCUMENT_ROOT'], '/') . '/../config/secure_env.php'
+            : null,
+    ];
+
+    foreach ($possiblePaths as $path) {
+        if ($path && file_exists($path)) {
+            require_once $path;
+            $loaded = true;
+            return;
+        }
+    }
+}
+
+loadSecureEnvForGiveawayPage();
+
+function createSignedFormToken(): string
+{
+    if (!defined('FORM_TOKEN_SECRET') || empty(FORM_TOKEN_SECRET)) {
+        return '';
+    }
+
+    $issuedAt = (string) time();
+    $nonce = bin2hex(random_bytes(16));
+    $payload = $issuedAt . '.' . $nonce;
+    $signature = hash_hmac('sha256', $payload, FORM_TOKEN_SECRET);
+
+    return base64_encode($payload . '.' . $signature);
+}
+
+function formStatusMessage(): array
+{
+    $status = $_GET['status'] ?? '';
+    $debugReason = $_GET['debug_reason'] ?? '';
+
+    if ($status === 'success') {
+        return [
+            'type' => 'success',
+            'message' => 'Thank you. Your inspection request was received. Invicta Roofing will follow up soon.',
+        ];
+    }
+
+    if ($status === 'mail_error') {
+        return [
+            'type' => 'error',
+            'message' => 'Your request could not be sent right now. Please call Invicta Roofing at 915-630-1349.',
+        ];
+    }
+
+    if ($status === 'error') {
+        $message = match ($debugReason) {
+            'missing_required_fields' => 'Please complete all required fields before submitting.',
+            'invalid_phone' => 'Please enter a valid phone number.',
+            'invalid_email' => 'Please enter a valid email address.',
+            'required_confirmations_missing' => 'Please confirm homeowner status, age, and agreement to the Official Rules.',
+            'invalid_form_token' => 'This form session expired. Please refresh the page and try again.',
+            'turnstile_failed' => 'Verification failed. Please try again.',
+            'rate_limited' => 'Too many requests were submitted. Please wait a few minutes and try again.',
+            default => 'Please check the form and try again.',
+        };
+
+        return [
+            'type' => 'error',
+            'message' => $message,
+        ];
+    }
+
+    return ['type' => '', 'message' => ''];
+}
+
+$formStatus = formStatusMessage();
+$formToken = createSignedFormToken();
+$turnstileSiteKey = defined('TURNSTILE_SITE_KEY') ? TURNSTILE_SITE_KEY : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -292,12 +381,28 @@
           </div>
         </div>
 
-        <form class="inspection-form reveal" action="#" method="post">
+        <form class="inspection-form reveal" action="process-giveaway-form.php" method="post">
+          <input type="hidden" name="form_token" value="<?= htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8') ?>" />
+          <input type="hidden" name="form_type" value="quinceanera_free_inspection" />
+          <input type="hidden" name="serviceRequested" value="Free Inspection" />
+
+          <div class="website-verification-wrap" aria-hidden="true">
+            <label>
+              Leave this field blank
+              <input type="text" name="website_verification_code" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
           <div class="form-header">
             <span>Inspection form</span>
             <h3>Request a free inspection</h3>
             <p>Complete the fields below and Invicta will follow up to schedule your roof check.</p>
           </div>
+
+          <?php if (!empty($formStatus['message'])): ?>
+            <div class="form-status form-status-<?= htmlspecialchars($formStatus['type'], ENT_QUOTES, 'UTF-8') ?>">
+              <?= htmlspecialchars($formStatus['message'], ENT_QUOTES, 'UTF-8') ?>
+            </div>
+          <?php endif; ?>
 
           <div class="form-grid-two">
             <label>
@@ -322,13 +427,13 @@
             </label>
             <label>
               Preferred Date/Time
-              <input type="text" name="preferredDateTime" placeholder="Preferred date/time or call me to schedule" />
+              <input type="text" name="preferredDateTime" placeholder="Preferred date/time or type: call me to schedule" required />
             </label>
           </div>
 
           <label>
             How did you hear about us?
-            <select name="heardAbout">
+            <select name="heardAbout" required>
               <option value="">Select one</option>
               <option>Social Media</option>
               <option>Billboard</option>
@@ -356,6 +461,12 @@
               <span>Text me appointment reminders. This checkbox is optional and is not required to submit this request.</span>
             </label>
           </div>
+
+          <?php if (!empty($turnstileSiteKey)): ?>
+            <div class="turnstile-wrap">
+              <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>"></div>
+            </div>
+          <?php endif; ?>
 
           <button class="btn btn-dark btn-full" type="submit">Submit Inspection Request</button>
           <p class="form-disclaimer">No purchase necessary. Enter free by mail, or take any listed qualifying action to earn entries. Entries vary by service type; see Official Rules for the full entry structure.</p>
@@ -573,6 +684,8 @@
   </footer>
 
   <a class="sticky-mobile-cta" href="#inspection-form">Schedule Free Inspection</a>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
