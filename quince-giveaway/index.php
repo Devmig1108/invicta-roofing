@@ -97,11 +97,11 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Making Quinceañeras Great Again | Invicta Roofing Giveaway Drawing</title>
-  <meta name="description" content="Invicta Roofing LLC is holding the Making Quinceañeras Great Again giveaway drawing. No purchase necessary. Open to Texas residential homeowners 18+. Entry Period: July 10, 2026 through January 10, 2027. Entries follow the Official Rules ticket structure. Full official rules at invictaroofs.com." />
+  <meta name="description" content="Invicta Roofing LLC is holding the Making Quinceañeras Great Again giveaway drawing. No purchase necessary. Open to El Paso, Texas residential homeowners 18+. Entry Period: July 10, 2026 through January 10, 2027. Entries follow the Official Rules ticket structure. Full official rules at invictaroofs.com." />
   <link rel="canonical" href="https://invictaroofs.com/quinceanera-giveaway" />
 
   <meta property="og:title" content="Making Quinceañeras Great Again | Invicta Roofing" />
-  <meta property="og:description" content="A free quinceañera package could be yours. No purchase necessary. Open to Texas residential homeowners 18+. Full official rules at invictaroofs.com." />
+  <meta property="og:description" content="A free quinceañera package could be yours. No purchase necessary. Open to El Paso, Texas residential homeowners 18+. Full official rules at invictaroofs.com." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://invictaroofs.com/quinceanera-giveaway" />
   <meta property="og:image" content="https://invictaroofs.com/images/quinceanera-giveaway-og.jpg" />
@@ -141,7 +141,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
   <header class="giveaway-header">
     <div class="announcement">
       <span>No purchase necessary</span>
-      <span>Open to Texas residential homeowners, 18+</span>
+      <span>Open to El Paso, Texas residential homeowners, 18+</span>
       <span>Full official rules at invictaroofs.com</span>
     </div>
 
@@ -180,11 +180,11 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         <div class="hero-copy reveal">
           <p class="eyebrow">Making Quinceañeras Great Again</p>
           <h1>A $12,000 quinceañera package could be yours.</h1>
-          <p class="hero-lead">A new yearly Invicta Roofing tradition starts here: one Texas residential homeowner could receive a quinceañera salon/venue package in El Paso for 2027.</p>
+          <p class="hero-lead">A new yearly Invicta Roofing tradition starts here: one El Paso, Texas residential homeowner could receive a quinceañera salon/venue package in El Paso for 2027.</p>
 
           <div class="hero-legal">
             <strong>No purchase necessary.</strong>
-            <span>Open to Texas residential homeowners 18+. Entry period: July 10, 2026 – January 10, 2027.</span>
+            <span>Open to El Paso, Texas residential homeowners 18+. Entry period: July 10, 2026 – January 10, 2027.</span>
           </div>
 
           <div class="hero-actions">
@@ -233,7 +233,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         <div class="preview-copy reveal">
           <p class="eyebrow">A celebration worth sharing</p>
           <h2>Una noche inolvidable starts with one entry.</h2>
-          <p>This giveaway drawing is about more than a venue package. It is about giving one Texas family the chance to celebrate a milestone surrounded by the people they love.</p>
+          <p>This giveaway drawing is about more than a venue package. It is about giving one El Paso, Texas family the chance to celebrate a milestone surrounded by the people they love.</p>
           <p>Follow Invicta Roofing for campaign updates, drawing reminders, and official announcements as the Entry Period moves forward.</p>
           <div class="mini-cta-row">
             <a class="btn btn-dark" href="#inspection-form">Schedule My Free Inspection</a>
@@ -273,7 +273,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           <article class="entry-card reveal" id="qualifying-action">
             <div class="entry-label">Qualifying action entries</div>
             <h3>Complete a qualifying action with Invicta Roofing.</h3>
-            <p>During the Entry Period, eligible Texas residential homeowners automatically receive entries once a qualifying action is completed. Scheduling alone does not earn an entry unless otherwise stated in the Official Rules.</p>
+            <p>During the Entry Period, eligible El Paso, Texas residential homeowners automatically receive entries once a qualifying action is completed. Scheduling alone does not earn an entry unless otherwise stated in the Official Rules.</p>
 
             <div class="ticket-table" role="table" aria-label="Qualifying action entry ticket structure">
               <div class="ticket-row ticket-head" role="row">
@@ -318,7 +318,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           <article class="entry-card featured reveal" id="mail-entry">
             <div class="entry-label">Alternate Method of Entry</div>
             <h3>Enter by free mail-in postcard.</h3>
-            <p>Any eligible Texas residential homeowner may enter without any paid service, inspection, or transaction by mailing a postcard with full name, mailing address, phone number, and email address to:</p>
+            <p>Any eligible El Paso, Texas residential homeowner may enter without any paid service, inspection, or transaction by mailing a postcard with full name, mailing address, phone number, and email address to:</p>
             <address>
               Invicta Roofing – Making Quinceañeras Great Again<br />
               509 Giles Rd<br />
@@ -353,11 +353,11 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           <div class="form-copy-cards">
             <div>
               <strong>Free roof check</strong>
-              <span>Request a pressure-free inspection for your Texas residential property.</span>
+              <span>Request a pressure-free inspection for your El Paso, Texas residential property.</span>
             </div>
             <div>
               <strong>Homeowner eligibility</strong>
-              <span>Entrants certify they are Texas residential homeowners and may be asked for reasonable proof before prize fulfillment.</span>
+              <span>Entrants certify they are El Paso, Texas residential homeowners and may be asked for reasonable proof before prize fulfillment.</span>
             </div>
             <div>
               <strong>Read before entering</strong>
@@ -498,7 +498,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         <div class="rules-list reveal">
           <div class="rule-item">
             <strong>Eligibility</strong>
-            <p>Open only to individuals who are homeowners of a residential property located in Texas and who are 18 years of age or older at the time of entry. By entering, participant certifies that they are the legal homeowner of a residential property in Texas. Sponsor reserves the right to request reasonable proof of homeownership from the selected winner prior to prize fulfillment. Void outside Texas and wherever prohibited by law.</p>
+            <p>Open only to individuals who are homeowners of a residential property located in El Paso, Texas and who are 18 years of age or older at the time of entry. By entering, participant certifies that they are the legal homeowner of a residential property in El Paso, Texas. Sponsor reserves the right to request reasonable proof of homeownership from the selected winner prior to prize fulfillment. Void outside Texas and wherever prohibited by law.</p>
           </div>
           <div class="rule-item">
             <strong>Not eligible</strong>
@@ -586,7 +586,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           </details>
           <details>
             <summary>Can I enter without doing business with Invicta?</summary>
-            <p>Yes. Eligible Texas residential homeowners may enter without any paid service, inspection, or transaction by using the free mail-in postcard method described above and in the Official Rules. Each qualifying postcard earns one entry, equal in value to the lowest-tier qualifying action entry, and must be received no later than December 15, 2026.</p>
+            <p>Yes. Eligible El Paso, Texas residential homeowners may enter without any paid service, inspection, or transaction by using the free mail-in postcard method described above and in the Official Rules. Each qualifying postcard earns one entry, equal in value to the lowest-tier qualifying action entry, and must be received no later than December 15, 2026.</p>
           </details>
           <details>
             <summary>Where will the drawing happen?</summary>
@@ -608,7 +608,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         <div>
           <p class="eyebrow">A free quinceañera package could be yours</p>
           <h2>Enter during the official Entry Period.</h2>
-          <p>No purchase necessary. Open to Texas residential homeowners 18+. Entries follow the official ticket structure, and a free mail-in postcard entry method is available. Odds of winning depend on total entries received.</p>
+          <p>No purchase necessary. Open to El Paso, Texas residential homeowners 18+. Entries follow the official ticket structure, and a free mail-in postcard entry method is available. Odds of winning depend on total entries received.</p>
         </div>
         <div class="final-actions">
           <a class="btn btn-primary" href="#inspection-form">Schedule My Free Inspection</a>
@@ -648,7 +648,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
 
       <div>
         <h2>Required Disclosure</h2>
-        <p>No purchase, inspection, payment, claim, or paid service is necessary to enter or win. Open to Texas residential homeowners 18+. Free mail-in entries must be received by December 15, 2026. Full official rules at invictaroofs.com.</p>
+        <p>No purchase, inspection, payment, claim, or paid service is necessary to enter or win. Open to El Paso, Texas residential homeowners 18+. Free mail-in entries must be received by December 15, 2026. Full official rules at invictaroofs.com.</p>
       </div>
     </div>
 
