@@ -196,7 +196,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         <div class="hero-feature reveal" aria-label="Quinceañera giveaway campaign image">
           <img src="images/featured.jpeg" alt="Invicta Roofing quinceañera package giveaway campaign" />
           <div class="feature-badge feature-badge-top">2027 Giveaway</div>
-          <div class="feature-badge feature-badge-bottom">Drawing date to be confirmed</div>
+          <div class="feature-badge feature-badge-bottom">Drawing Jan. 15, 2027</div>
         </div>
       </div>
     </section>
@@ -324,7 +324,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
               509 Giles Rd<br />
               El Paso, TX 79915
             </address>
-            <p class="note">Each qualifying postcard received during the Entry Period earns one entry, equal in value to the lowest-tier qualifying action entry. It must be postmarked within the Entry Period and received no later than December 3, 2026.</p>
+            <p class="note">Each qualifying postcard received during the Entry Period earns one entry, equal in value to the lowest-tier qualifying action entry. It must be postmarked within the Entry Period and received no later than December 15, 2026.</p>
           </article>
         </div>
 
@@ -506,7 +506,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           </div>
           <div class="rule-item">
             <strong>Winner selection</strong>
-            <p>The selected recipient will be chosen by random drawing from all eligible entries at 509 Giles Rd, El Paso, TX 79915. Drawing date to be confirmed by Sponsor.</p>
+            <p>The selected recipient will be chosen by random drawing from all eligible entries on January 15, 2027 at 509 Giles Rd, El Paso, TX 79915.</p>
           </div>
           <div class="rule-item">
             <strong>Odds</strong>
@@ -518,7 +518,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           </div>
           <div class="rule-item">
             <strong>Mail-in deadline</strong>
-            <p>Free mail-in postcard entries must be postmarked within the Entry Period and received no later than December 3, 2026.</p>
+            <p>Free mail-in postcard entries must be postmarked within the Entry Period and received no later than December 15, 2026.</p>
           </div>
           <div class="rule-item">
             <strong>Notification</strong>
@@ -548,12 +548,12 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           <article class="timeline-card reveal">
             <span>January 10, 2027</span>
             <h3>Entry Period ends</h3>
-            <p>Entries received outside the Entry Period will not be counted. Mail-in postcards must be received no later than December 3, 2026.</p>
+            <p>Entries received outside the Entry Period will not be counted. Mail-in postcards must be received no later than December 15, 2026.</p>
           </article>
           <article class="timeline-card reveal">
-            <span>Date to be confirmed</span>
+            <span>January 15, 2027</span>
             <h3>Random drawing</h3>
-            <p>Drawing takes place at Invicta Roofing and will be broadcast live on Facebook, Instagram, and/or TikTok. Final drawing date to be confirmed by Sponsor.</p>
+            <p>Drawing takes place at Invicta Roofing on January 15, 2027 and will be broadcast live on Facebook, Instagram, and/or TikTok.</p>
           </article>
           <article class="timeline-card reveal">
             <span>Feb. 15 – Dec. 15, 2027</span>
@@ -586,11 +586,11 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           </details>
           <details>
             <summary>Can I enter without doing business with Invicta?</summary>
-            <p>Yes. Eligible Texas residential homeowners may enter without any paid service, inspection, or transaction by using the free mail-in postcard method described above and in the Official Rules. Each qualifying postcard earns one entry, equal in value to the lowest-tier qualifying action entry, and must be received no later than December 3, 2026.</p>
+            <p>Yes. Eligible Texas residential homeowners may enter without any paid service, inspection, or transaction by using the free mail-in postcard method described above and in the Official Rules. Each qualifying postcard earns one entry, equal in value to the lowest-tier qualifying action entry, and must be received no later than December 15, 2026.</p>
           </details>
           <details>
             <summary>Where will the drawing happen?</summary>
-            <p>The random drawing will occur at Invicta Roofing, 509 Giles Rd, El Paso, TX 79915, and will be broadcast live on Facebook, Instagram, and/or TikTok. Final drawing date to be confirmed by Sponsor.</p>
+            <p>The random drawing will occur on January 15, 2027 at Invicta Roofing, 509 Giles Rd, El Paso, TX 79915, and will be broadcast live on Facebook, Instagram, and/or TikTok.</p>
           </details>
           <details>
             <summary>Who sponsors the Giveaway?</summary>
@@ -648,7 +648,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
 
       <div>
         <h2>Required Disclosure</h2>
-        <p>No purchase, inspection, payment, claim, or paid service is necessary to enter or win. Open to Texas residential homeowners 18+. Free mail-in entries must be received by December 3, 2026. Full official rules at invictaroofs.com.</p>
+        <p>No purchase, inspection, payment, claim, or paid service is necessary to enter or win. Open to Texas residential homeowners 18+. Free mail-in entries must be received by December 15, 2026. Full official rules at invictaroofs.com.</p>
       </div>
     </div>
 
