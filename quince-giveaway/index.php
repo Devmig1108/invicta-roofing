@@ -385,7 +385,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           </div>
         </div>
 
-        <form class="inspection-form reveal" action="/." method="post">
+        <form class="inspection-form reveal" action="./" method="post">
           <input type="hidden" name="form_token" value="<?= htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8') ?>" />
           <input type="hidden" name="form_type" value="quinceanera_free_inspection" />
           <input type="hidden" name="serviceRequested" value="Free Inspection" />
