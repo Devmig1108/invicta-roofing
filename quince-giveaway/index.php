@@ -31,16 +31,19 @@ loadSecureEnvForGiveawayPage();
 
 function createSignedFormToken(): string
 {
-    if (!defined('FORM_TOKEN_SECRET') || empty(FORM_TOKEN_SECRET)) {
+    if (!defined('FORM_TOKEN_SECRET') || FORM_TOKEN_SECRET === '') {
         return '';
     }
 
-    $issuedAt = (string) time();
-    $nonce = bin2hex(random_bytes(16));
-    $payload = $issuedAt . '.' . $nonce;
-    $signature = hash_hmac('sha256', $payload, FORM_TOKEN_SECRET);
+    $payload = [
+        'ts' => time(),
+        'nonce' => bin2hex(random_bytes(16)),
+    ];
 
-    return base64_encode($payload . '.' . $signature);
+    $payloadEncoded = base64_encode(json_encode($payload, JSON_UNESCAPED_SLASHES));
+    $signature = hash_hmac('sha256', $payloadEncoded, FORM_TOKEN_SECRET);
+
+    return $payloadEncoded . '.' . $signature;
 }
 
 function formStatusMessage(): array
@@ -85,7 +88,8 @@ function formStatusMessage(): array
 
 $formStatus = formStatusMessage();
 $formToken = createSignedFormToken();
-$turnstileSiteKey = defined('TURNSTILE_SITE_KEY') ? TURNSTILE_SITE_KEY : '';
+$turnstileEnabled = defined('TURNSTILE_ENABLED') && TURNSTILE_ENABLED === true;
+$turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNSTILE_SITE_KEY : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
