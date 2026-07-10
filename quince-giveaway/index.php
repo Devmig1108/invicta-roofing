@@ -189,7 +189,6 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#inspection-form">Schedule My Free Inspection</a>
-            <a class="btn btn-secondary" href="#ways-to-enter">See How to Enter</a>
             <a class="btn btn-secondary" href="docs/official-rules.pdf" target="_blank" rel="noopener">Official Rules</a>
           </div>
         </div>
@@ -224,7 +223,6 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
       <div class="container strip-action-row reveal">
         <a class="btn btn-primary" href="#inspection-form">Schedule My Free Inspection</a>
         <a class="btn btn-secondary" href="#mail-entry">Free Mail-In Entry Details</a>
-        <a class="btn btn-secondary" href="docs/official-rules.pdf" target="_blank" rel="noopener">Official Rules</a>
       </div>
     </section>
 
@@ -239,7 +237,6 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           <p>Follow Invicta Roofing for campaign updates, drawing reminders, and official announcements as the Entry Period moves forward.</p>
           <div class="mini-cta-row">
             <a class="btn btn-dark" href="#inspection-form">Schedule My Free Inspection</a>
-            <a class="btn btn-outline-dark" href="#ways-to-enter">See Ways to Enter</a>
             <a class="btn btn-outline-dark" href="https://www.instagram.com/invictaroofing915/" target="_blank" rel="noopener">Follow on Instagram</a>
           </div>
         </div>
@@ -311,21 +308,10 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
 
             <p class="note">Entries are cumulative for qualifying transactions during the Entry Period. Sponsor maintains a log of entries issued by method and ticket count.</p>
 
-            <div class="service-cta-grid" aria-label="Service entry action buttons">
-              <a href="#inspection-form">Schedule My Free Inspection</a>
-              <a href="tel:+19156301349">Start My Claim — Free</a>
-              <a href="tel:+19156301349">Book Maintenance Service</a>
-              <a href="tel:+19156301349">Get My Repair Quote</a>
-              <a href="tel:+19156301349">Get My Coating Quote</a>
-              <a href="tel:+19156301349">Get My Replacement Quote</a>
-            </div>
-
-            <p class="entry-disclaimer">No purchase necessary. Enter free by mail or by scheduling any service below.</p>
+            <p class="entry-disclaimer">No purchase necessary. Enter free by mail or schedule a free roof inspection below.</p>
             <div class="cta-row">
               <a class="btn btn-dark" href="#inspection-form">Schedule My Free Inspection</a>
-              <a class="btn btn-outline-dark" href="tel:+19156301349">Call Invicta</a>
-              <a class="btn btn-outline-dark" href="https://www.facebook.com/profile.php?id=61587098842468" target="_blank" rel="noopener">DM on Facebook</a>
-              <a class="btn btn-outline-dark" href="https://www.instagram.com/invictaroofing915/" target="_blank" rel="noopener">DM on Instagram</a>
+              <a class="btn btn-outline-dark" href="#mail-entry">Free Mail-In Entry Details</a>
             </div>
           </article>
 
@@ -343,11 +329,6 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         </div>
 
         <div class="legal-cta-row reveal" aria-label="Giveaway action links">
-          <a class="legal-cta" href="#qualifying-action">
-            <span>Qualifying action</span>
-            <strong>Ask Invicta about entry options</strong>
-            <small>Entries are issued by the official ticket structure after qualifying actions are completed.</small>
-          </a>
           <a class="legal-cta" href="#mail-entry">
             <span>Free mail-in option</span>
             <strong>Enter by postcard</strong>
@@ -487,9 +468,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           <p>The prize is a quinceañera salon/venue package at an El Paso venue selected by Invicta Roofing, with a stated retail value of $12,000.</p>
           <p>The winner selects the event date between February 15, 2027 and December 15, 2027, subject to venue availability and the venue's own terms, availability, and cancellation policies.</p>
           <div class="inline-cta-group">
-            <a class="inline-cta cta-light" href="#inspection-form">Schedule My Free Inspection</a>
             <a class="inline-cta cta-light" href="#ways-to-enter">See entry methods and tickets</a>
-            <a class="inline-cta cta-light" href="#rules">Check rule highlights</a>
           </div>
         </div>
 
@@ -513,8 +492,6 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           <p>These highlights are not a substitute for the full Official Rules. The Official Rules control all giveaway terms.</p>
           <div class="rules-action-group">
             <a class="btn btn-dark" href="docs/official-rules.pdf" target="_blank" rel="noopener">Open Full Official Rules</a>
-            <a class="btn btn-outline-dark" href="#inspection-form">Schedule My Free Inspection</a>
-            <a class="btn btn-outline-dark" href="#mail-entry">Free Mail-In Entry Details</a>
           </div>
         </div>
 
@@ -586,8 +563,6 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         </div>
         <div class="section-cta-row reveal">
           <a class="btn btn-primary" href="#inspection-form">Schedule My Free Inspection</a>
-          <a class="btn btn-secondary" href="#mail-entry">Review Free Mail-In Option</a>
-          <a class="btn btn-secondary" href="docs/official-rules.pdf" target="_blank" rel="noopener">Official Rules</a>
         </div>
       </div>
     </section>
@@ -624,8 +599,6 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         </div>
         <div class="faq-cta-row reveal">
           <a class="btn btn-dark" href="#inspection-form">Schedule My Free Inspection</a>
-          <a class="btn btn-outline-dark" href="#ways-to-enter">Compare Entry Options</a>
-          <a class="btn btn-outline-dark" href="tel:+19156301349">Call Invicta</a>
         </div>
       </div>
     </section>
@@ -639,8 +612,6 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         </div>
         <div class="final-actions">
           <a class="btn btn-primary" href="#inspection-form">Schedule My Free Inspection</a>
-          <a class="btn btn-secondary dark" href="#ways-to-enter">See Ways to Enter</a>
-          <a class="btn btn-secondary dark" href="#mail-entry">Mail-In Entry Details</a>
           <a class="btn btn-secondary dark" href="docs/official-rules.pdf" target="_blank" rel="noopener">View Official Rules</a>
         </div>
       </div>
