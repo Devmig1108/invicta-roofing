@@ -747,6 +747,14 @@ h3 {
   font-style: italic;
 }
 
+.quote-grid .lowlight {
+  color: var(--muted);
+}
+
+.quote-grid .highlight {
+  color: var(--pink-2);
+}
+
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

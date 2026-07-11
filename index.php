@@ -186,20 +186,26 @@
         <div class="credential-copy">
           <p class="eyebrow"><span>Trusted</span> credentials</p>
           <h2>Recognized roofing standards behind every inspection.</h2>
-          <p>Invicta Roofing builds trust with manufacturer certification, industry affiliation, and a public BBB business profile homeowners can review before they call.</p>
+          <p>Invicta Roofing builds trust with manufacturer certification, industry affiliation, and a public BBB
+            business profile homeowners can review before they call.</p>
         </div>
 
         <div class="credential-logos" aria-label="Invicta Roofing trust badges">
-          <div class="credential-logo credential-logo-gaf" aria-label="GAF Certified Plus Residential Roofing Contractor">
-            <img src="images/Certified_Plus.png" alt="GAF Certified Plus Residential Roofing Contractor" width="320" height="320" />
+          <div class="credential-logo credential-logo-gaf"
+            aria-label="GAF Certified Plus Residential Roofing Contractor">
+            <img src="images/Certified_Plus.png" alt="GAF Certified Plus Residential Roofing Contractor" width="320"
+              height="320" />
           </div>
 
           <div class="credential-logo credential-logo-nwir" aria-label="National Women in Roofing">
             <img src="images/nwir.png" alt="National Women in Roofing" width="420" height="150" />
           </div>
 
-          <a class="credential-logo credential-logo-bbb" href="https://www.bbb.org/us/tx/el-paso/profile/roofing-contractors/invicta-roofing-0895-99174989/#sealclick" target="_blank" rel="nofollow noopener" aria-label="Invicta Roofing BBB Business Review">
-            <img src="https://seal-elpaso.bbb.org/seals/blue-seal-153-100-bluetxt-bbb-99174989.png" style="border: 0;" alt="Invicta Roofing BBB Business Review" width="153" height="100" />
+          <a class="credential-logo credential-logo-bbb"
+            href="https://www.bbb.org/us/tx/el-paso/profile/roofing-contractors/invicta-roofing-0895-99174989/#sealclick"
+            target="_blank" rel="nofollow noopener" aria-label="Invicta Roofing BBB Business Review">
+            <img src="https://seal-elpaso.bbb.org/seals/blue-seal-153-100-bluetxt-bbb-99174989.png" style="border: 0;"
+              alt="Invicta Roofing BBB Business Review" width="153" height="100" />
           </a>
         </div>
       </div>
@@ -273,11 +279,13 @@
     <section class="section before-after" id="results">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow"><span>Before </span>  &amp; <span>after</span> roof work</p>
+          <p class="eyebrow"><span>Before </span> &amp; <span>after</span> roof work</p>
           <h2>See the difference choosing Invicta Roofing Makes.</h2>
-          <p>A roof should do more than look finished from the street. Invicta focuses on the details homeowners care
-            about most: clean roof lines, proper repairs, clear documentation, and a jobsite that is left looking cared
-            for.</p>
+          <p>Every roof replacement has its own story, its own challenges, and its own sense of urgency. But at Invicta,
+            our approach never changes: we listen, assess, document, provide options, and use efficient processes to get
+            homeowners to peace of mind as quickly as possible. <span style="font-weight: bold;">Because no matter the
+              challenge, every home deserves to
+              stay Invicta—unconquered.</span></p>
         </div>
 
         <div class="ba-grid">
@@ -294,10 +302,14 @@
             </div>
             <div class="ba-content">
               <span>Roof replacements</span>
-              <h3>From an aging roof to a stronger, cleaner home exterior.</h3>
-              <p>When shingles are worn, roof edges are tired, or leaks keep coming back, replacement gives the home a
-                fresh start with better protection, improved curb appeal, and a roof system built for long-term
-                confidence.</p>
+              <h3>From an Aging Roof to an Unconquered Home.</h3>
+              <p>This 20-year-old roof was suffering from severe wear and tear, along with extensive damage from a
+                previous evaporative cooler.
+                Her son works in the roofing industry and understood the importance of choosing a reputable company
+                known for quality craftsmanship. After receiving three quotes, she chose Invicta Roofing for our
+                customer service, workmanship, trust, product quality, and competitive pricing. The quote was clear, the
+                deliverables were well defined, the project was scheduled within two weeks, and the roof was completed
+                in just two days.</p>
             </div>
           </article>
 
@@ -314,10 +326,12 @@
             </div>
             <div class="ba-content">
               <span>Repairs &amp; maintenance</span>
-              <h3>Small roof problems fixed before they turn into costly damage.</h3>
-              <p>Lifted shingles, leak-prone areas, flashing issues, and maintenance concerns can spread quickly.
-                Invicta helps homeowners handle the problem area early and protect the rest of the home from unnecessary
-                damage.</p>
+              <h3>From Cheap Labor to Undefeated Quality</h3>
+              <p>This 5-year-old patio extension was installed by a previous contractor without proper flashing or
+                proper installation techniques. Over the years, the porch retained water, eventually causing cracks in
+                the drywall.
+                This family chose Invicta Roofing to correct the issue. It's never too late to recover from cheap labor.
+              </p>
             </div>
           </article>
 
@@ -334,10 +348,14 @@
             </div>
             <div class="ba-content">
               <span>Inspection documentation</span>
-              <h3>Clear roof photos that help homeowners make the right call.</h3>
-              <p>After wind, hail, heat, or visible wear, clear photo documentation makes the next step easier to
-                understand. Invicta explains what was found and whether inspection, repair, maintenance, replacement, or
-                insurance support makes sense.</p>
+              <h3>From Uninsurable to Invicta</h3>
+              <p>This 20-year-old roof no longer qualified for insurance coverage. The homeowner was having difficulty
+                obtaining a policy, and the mortgage company warned that the loan could go into default if insurance was
+                not secured within 30 days. </p>
+              <p>Invicta Roofing stepped in and provided an affordable financing option with
+                payments of just **$180 per month**, allowing this retired family to replace their roof. Their home is
+                now Invicta, they avoided default, and they may now qualify for better insurance coverage and more
+                favorable rates.</p>
             </div>
           </article>
         </div>
@@ -378,10 +396,15 @@
     <section class="section why">
       <div class="container why-grid">
         <div class="why-copy reveal">
-          <p class="eyebrow">Built <span>Strong</span>. Led <span>Stronger</span>.</p>
+          <p class="eyebrow">Built <span>For El Paso</span>. Build for <span>What's Next</span>.</p>
           <h2>Why homeowners choose Invicta Roofing.</h2>
-          <p>Invicta’s brand already carries the right promise: unconquered, undefeated, and built with enduring
-            strength. The website should turn that promise into confidence, trust, and booked inspections.</p>
+          <p>This border is our home—and our home is changing.
+            The mountains are greener. The rains are heavier. El Paso is evolving, and many roofs here weren't built for
+            what's next.
+            At Invicta, we install with advanced water intrusion protection because we know this city. We build for
+            today's climate, not yesterday's.
+            Homeowners choose Invicta because they want more than a new roof—they want one built to stay unconquered.
+            Built for El Paso. Built for what's next.</p>
         </div>
 
         <div class="why-list reveal">
@@ -409,7 +432,7 @@
       <div class="container reviews-layout">
         <div class="reviews-intro reveal">
           <p class="eyebrow">Google reviews</p>
-          <h2>Homeowners call out what matters: service, cleanup, and quality.</h2>
+          <h2>Homeowners call out what matters most: knowing they made the right decision for decates to come.</h2>
           <p>The strongest roofing proof is not just the finished roof. It is how the homeowner feels during the
             process: fast response, clear communication, respectful crews, quality materials, and a clean property when
             the work is done.</p>
@@ -425,13 +448,16 @@
           <article class="review-card reveal">
             <div class="review-topline">
               <div>
-                <strong>Kelvin Culberson</strong>
+                <strong>Andrea Blea</strong>
                 <span>Google review • 3 months ago</span>
               </div>
               <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
             </div>
-            <p>“If you're looking for great quality and customer service .....that's what you will receive. Service like
-              none other. Thank me later”</p>
+            <p>“This team is very friendly and professional. They are open and honest and will provide every possible
+              option to fit your need and your budget. Inspection/Evaluation is free. They keep their word and show up
+              when promised. Their work is the best quality and they take the time to follow up on their work. We are
+              very happy with the services they provided. I highly recommend them!! They fixed all the errors of our
+              previous contractor. My roof is beautiful! Thank you for everything.r”</p>
           </article>
 
           <article class="review-card reveal">
@@ -486,7 +512,7 @@
 
     <section class="quote-band section-dark">
       <div class="container quote-grid reveal">
-        <p>“El trabajo barato ya se hizo. Ahora toca el bueno.”</p>
+        <p>“El trabajo <span class="lowlight">barato</span> ya se hizo. Ahora toca el <span class="highlight">bueno</span>.”</p>
         <div>
           <strong>Be protected. Be Invicta.</strong>
           <span>Sin techo no es casa.</span>
@@ -498,7 +524,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">Simple homeowner process</p>
-          <h2>From inspection to protected home.</h2>
+          <h2>From inspection to long term value.</h2>
         </div>
 
         <div class="process-grid">
@@ -520,7 +546,7 @@
           </article>
           <article class="process-card reveal">
             <span>4</span>
-            <h3>Protect your home</h3>
+            <h3>Make your home Invicta</h3>
             <p>Your roof is repaired, maintained, or replaced with clean workmanship and respect for your property.</p>
           </article>
         </div>
@@ -531,9 +557,8 @@
       <div class="container cta-grid">
         <div class="cta-copy reveal">
           <p class="eyebrow">Free roof inspection</p>
-          <h2>Do not wait until a small roof issue becomes an expensive one.</h2>
-          <p>Tell us what is going on with your roof. Invicta Roofing will follow up to schedule a free inspection and
-            give you a clear next step.</p>
+          <h2>The people who make the best long-term decisions don't guess- they verify.</h2>
+          <p>Let us inspect your roof at no cost, so you can know exactly where your home stands.</p>
 
           <div class="contact-cards">
             <a href="tel:+19156301349">
@@ -573,6 +598,11 @@
             </select>
           </label>
           <label>
+           How did you hear about us?
+            <textarea name="message" rows="4"
+              placeholder="Tell us how you found out about us."></textarea>
+          </label>
+          <label>
             Notes
             <textarea name="message" rows="4"
               placeholder="Tell us about leaks, missing shingles, roof age, visible damage, or maintenance concerns."></textarea>
@@ -588,7 +618,6 @@
         <div class="faq-intro reveal">
           <p class="eyebrow">Questions homeowners ask</p>
           <h2>Roofing questions, answered clearly.</h2>
-          <p>Use this section to capture search traffic and reduce hesitation before someone calls.</p>
         </div>
 
         <div class="faq-list reveal">
@@ -629,7 +658,7 @@
           <img class="brand-logo footer-logo" src="images/logo_md.png" alt="Invicta Roofing" width="280" height="84"
             loading="lazy" />
         </a>
-        <p>Undedfeated roofing for El Paso homes. Family-approved. Built to protect what matters most.</p>
+        <p>Undedfeated roofing for El Paso homes. Family-approved. Built to be undefeated.</p>
       </div>
 
       <div>
