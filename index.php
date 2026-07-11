@@ -207,6 +207,11 @@
             <img src="https://seal-elpaso.bbb.org/seals/blue-seal-153-100-bluetxt-bbb-99174989.png" style="border: 0;"
               alt="Invicta Roofing BBB Business Review" width="153" height="100" />
           </a>
+          <div class="credential-logo credential-logo-gaf"
+            aria-label="GAF Certified Plus Residential Roofing Contractor">
+            <img src="images/epcom.png" alt="GAF Certified Plus Residential Roofing Contractor" width="320"
+              height="320" />
+          </div>
         </div>
       </div>
     </section>
@@ -280,7 +285,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow"><span>Before </span> &amp; <span>after</span> roof work</p>
-          <h2>See the difference choosing Invicta Roofing Makes.</h2>
+          <h2>See the difference choosing Invicta Roofing makes.</h2>
           <p>Every roof replacement has its own story, its own challenges, and its own sense of urgency. But at Invicta,
             our approach never changes: we listen, assess, document, provide options, and use efficient processes to get
             homeowners to peace of mind as quickly as possible. <span style="font-weight: bold;">Because no matter the
@@ -403,8 +408,9 @@
             what's next.
             At Invicta, we install with advanced water intrusion protection because we know this city. We build for
             today's climate, not yesterday's.
-            Homeowners choose Invicta because they want more than a new roof—they want one built to stay unconquered.
-            Built for El Paso. Built for what's next.</p>
+            <span style="font-weight:bold;">Homeowners choose Invicta because they want more than a new roof—they want one built to stay unconquered.</span>
+            Built for El Paso. Built for what's next.
+          </p>
         </div>
 
         <div class="why-list reveal">
@@ -432,7 +438,7 @@
       <div class="container reviews-layout">
         <div class="reviews-intro reveal">
           <p class="eyebrow">Google reviews</p>
-          <h2>Homeowners call out what matters most: knowing they made the right decision for decates to come.</h2>
+          <h2>Homeowners call out what matters most: knowing they made the right decision for decades to come.</h2>
           <p>The strongest roofing proof is not just the finished roof. It is how the homeowner feels during the
             process: fast response, clear communication, respectful crews, quality materials, and a clean property when
             the work is done.</p>
