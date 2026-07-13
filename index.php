@@ -10,6 +10,7 @@
   <meta name="keywords"
     content="roofing El Paso, roof inspection El Paso, roof replacement El Paso, roof repair El Paso, roofing contractor El Paso, insurance support roofing" />
   <link rel="canonical" href="https://invictaroofs.com/" />
+  <link rel="icon" type="image/png" href="/images/logo.png">
 
   <meta property="og:title" content="Invicta Roofing | Unconquered Roofing For El Paso Homes" />
   <meta property="og:description"
