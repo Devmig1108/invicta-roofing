@@ -195,7 +195,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
         </div>
 
         <div class="hero-feature reveal" aria-label="Quinceañera giveaway campaign image">
-          <img src="images/featured.jpeg" alt="Invicta Roofing quinceañera package giveaway campaign" />
+          <img src="images/featured.jpg" alt="Invicta Roofing quinceañera package giveaway campaign" />
           <div class="feature-badge feature-badge-top">2027 Giveaway</div>
           <div class="feature-badge feature-badge-bottom">Drawing Jan. 15, 2027</div>
         </div>
