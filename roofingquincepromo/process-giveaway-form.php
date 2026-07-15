@@ -5,14 +5,20 @@ declare(strict_types=1);
 /**
  * Invicta Quinceañera Giveaway Form Processor
  *
- * Current demo/staging behavior:
- * - Validates required fields
- * - Validates homeowner / 18+ / rules agreement checkboxes
- * - Checks honeypot
- * - Checks signed form token
- * - Optionally checks Turnstile if enabled
- * - Saves submission to private JSONL log when FORM_DELIVERY_MODE = 'log'
- * - Sends email later when FORM_DELIVERY_MODE = 'email'
+ * Supports the current form names:
+ * - fullName
+ * - propertyAddress
+ * - phone
+ * - email
+ * - preferredDateTime
+ * - heardAbout
+ * - homeownerConfirm
+ * - ageConfirm
+ * - rulesConfirm
+ * - textReminders
+ * - serviceRequested
+ *
+ * Also supports older snake_case fallback names.
  */
 
 require_once dirname(__DIR__) . '/config/secure_env.php';
@@ -32,9 +38,31 @@ function postValue(string $key, string $default = ''): string
     return isset($_POST[$key]) ? trim((string) $_POST[$key]) : $default;
 }
 
+function postFirst(array $keys, string $default = ''): string
+{
+    foreach ($keys as $key) {
+        if (isset($_POST[$key])) {
+            return trim((string) $_POST[$key]);
+        }
+    }
+
+    return $default;
+}
+
 function checkboxValue(string $key): bool
 {
     return isset($_POST[$key]) && in_array((string) $_POST[$key], ['1', 'yes', 'on', 'true'], true);
+}
+
+function checkboxFirst(array $keys): bool
+{
+    foreach ($keys as $key) {
+        if (checkboxValue($key)) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 function cleanText(string $value): string
@@ -46,10 +74,18 @@ function cleanText(string $value): string
     return $value;
 }
 
+function textLength(string $value): int
+{
+    return function_exists('mb_strlen') ? mb_strlen($value) : strlen($value);
+}
+
 function redirectBack(string $status, string $reason = ''): void
 {
     $debug = defined('FORM_DEBUG') && FORM_DEBUG === true;
-    $query = ['status' => $status];
+
+    $query = [
+        'status' => $status,
+    ];
 
     if ($debug && $reason !== '') {
         $query['debug_reason'] = $reason;
@@ -73,6 +109,8 @@ function logDebug(string $event, array $context = []): void
         mkdir($logDir, 0755, true);
     }
 
+    protectLogDirectory($logDir);
+
     $payload = [
         'logged_at' => date('c'),
         'event' => $event,
@@ -92,8 +130,7 @@ function logDebug(string $event, array $context = []): void
  * ------------------------------------------------------------
  */
 
-// Honeypot field. This should be hidden with CSS.
-// If a bot fills it out, reject the submission.
+// Honeypot field. This should stay hidden with CSS.
 $honeypot = postValue('website_verification_code');
 
 if ($honeypot !== '') {
@@ -126,7 +163,7 @@ if (!passesRateLimit()) {
 }
 
 // Turnstile verification.
-// Disabled in staging if TURNSTILE_ENABLED is false.
+// Keep TURNSTILE_ENABLED false until the demo domain is configured.
 if (defined('TURNSTILE_ENABLED') && TURNSTILE_ENABLED === true) {
     $turnstileToken = postValue('cf-turnstile-response');
 
@@ -145,19 +182,20 @@ if (defined('TURNSTILE_ENABLED') && TURNSTILE_ENABLED === true) {
  * ------------------------------------------------------------
  */
 
-$fullName = cleanText(postValue('fullName'));
-$propertyAddress = cleanText(postValue('propertyAddress'));
-$phone = cleanText(postValue('phone'));
-$email = cleanText(postValue('email'));
-$preferredDateTime = cleanText(postValue('preferredDateTime'));
-$hearAboutUs = cleanText(postValue('hearAboutUs'));
-$service = cleanText(postValue('service', 'Free Roof Inspection'));
-$message = cleanText(postValue('message'));
+$formType = cleanText(postFirst(['form_type']));
+$fullName = cleanText(postFirst(['fullName', 'name']));
+$propertyAddress = cleanText(postFirst(['propertyAddress', 'address']));
+$phone = cleanText(postFirst(['phone']));
+$email = cleanText(postFirst(['email']));
+$preferredDateTime = cleanText(postFirst(['preferredDateTime']));
+$hearAboutUs = cleanText(postFirst(['heardAbout', 'hearAboutUs']));
+$service = cleanText(postFirst(['serviceRequested', 'service'], 'Free Inspection'));
+$message = cleanText(postFirst(['message', 'notes', 'comments']));
 
-$isHomeowner = checkboxValue('homeowner_confirm');
-$isAdult = checkboxValue('age_confirm');
-$acceptedRules = checkboxValue('rules_confirm');
-$textReminders = checkboxValue('text_reminders');
+$isHomeowner = checkboxFirst(['homeownerConfirm', 'homeowner_confirm']);
+$isAdult = checkboxFirst(['ageConfirm', 'age_confirm']);
+$acceptedRules = checkboxFirst(['rulesConfirm', 'rules_confirm']);
+$textReminders = checkboxFirst(['textReminders', 'text_reminders']);
 
 $allowedHearAbout = [
     'Social Media',
@@ -168,6 +206,10 @@ $allowedHearAbout = [
 ];
 
 $errors = [];
+
+if ($formType !== 'quinceanera_free_inspection') {
+    $errors[] = 'invalid_form_type';
+}
 
 if ($fullName === '') {
     $errors[] = 'missing_name';
@@ -192,9 +234,9 @@ if ($preferredDateTime === '') {
 }
 
 if ($hearAboutUs === '') {
-    $errors[] = 'missing_hear_about_us';
+    $errors[] = 'missing_heard_about';
 } elseif (!in_array($hearAboutUs, $allowedHearAbout, true)) {
-    $errors[] = 'invalid_hear_about_us';
+    $errors[] = 'invalid_heard_about';
 }
 
 if (!$isHomeowner) {
@@ -213,19 +255,27 @@ if ($phone !== '' && !preg_match('/^[0-9+\-\s().]{7,30}$/', $phone)) {
     $errors[] = 'invalid_phone';
 }
 
-if (mb_strlen($fullName) > 120) {
+if (textLength($fullName) > 120) {
     $errors[] = 'name_too_long';
 }
 
-if (mb_strlen($propertyAddress) > 220) {
+if (textLength($propertyAddress) > 220) {
     $errors[] = 'property_address_too_long';
 }
 
-if (mb_strlen($preferredDateTime) > 120) {
+if (textLength($preferredDateTime) > 120) {
     $errors[] = 'preferred_date_time_too_long';
 }
 
-if (mb_strlen($message) > 3000) {
+if (textLength($hearAboutUs) > 80) {
+    $errors[] = 'heard_about_too_long';
+}
+
+if (textLength($service) > 120) {
+    $errors[] = 'service_too_long';
+}
+
+if (textLength($message) > 3000) {
     $errors[] = 'message_too_long';
 }
 
@@ -247,6 +297,7 @@ if (!empty($errors)) {
 $submission = [
     'submitted_at' => date('c'),
     'source' => 'quinceanera-giveaway',
+    'form_type' => $formType,
     'environment' => defined('FORM_DELIVERY_MODE') ? FORM_DELIVERY_MODE : 'log',
 
     'full_name' => $fullName,
@@ -254,7 +305,7 @@ $submission = [
     'phone' => $phone,
     'email' => $email,
     'preferred_date_time' => $preferredDateTime,
-    'service' => $service,
+    'service_requested' => $service,
     'how_did_you_hear_about_us' => $hearAboutUs,
     'message' => $message,
 
@@ -296,7 +347,6 @@ if ($deliveryMode === 'email') {
     redirectBack('success');
 }
 
-// Fallback if config has an unsupported mode.
 logDebug('invalid_delivery_mode', [
     'delivery_mode' => $deliveryMode,
 ]);
@@ -347,13 +397,14 @@ function validateSignedFormToken(string $token): bool
     }
 
     $issuedAt = (int) $payload['ts'];
-    $maxAgeSeconds = defined('FORM_TOKEN_MAX_AGE_SECONDS')
-        ? (int) FORM_TOKEN_MAX_AGE_SECONDS
-        : 7200;
 
     if ($issuedAt <= 0) {
         return false;
     }
+
+    $maxAgeSeconds = defined('FORM_TOKEN_MAX_AGE_SECONDS')
+        ? (int) FORM_TOKEN_MAX_AGE_SECONDS
+        : 7200;
 
     if (time() - $issuedAt > $maxAgeSeconds) {
         return false;
@@ -381,6 +432,8 @@ function passesRateLimit(): bool
     if (!is_dir($logDir)) {
         mkdir($logDir, 0755, true);
     }
+
+    protectLogDirectory($logDir);
 
     $rateFile = $logDir . '/giveaway-rate-limit.json';
 
@@ -477,7 +530,18 @@ function saveGiveawaySubmission(array $data): void
         mkdir($logDir, 0755, true);
     }
 
-    $htaccessPath = $logDir . '/.htaccess';
+    protectLogDirectory($logDir);
+
+    file_put_contents(
+        $logFile,
+        json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . PHP_EOL,
+        FILE_APPEND | LOCK_EX
+    );
+}
+
+function protectLogDirectory(string $logDir): void
+{
+    $htaccessPath = rtrim($logDir, '/\\') . '/.htaccess';
 
     if (!file_exists($htaccessPath)) {
         file_put_contents(
@@ -486,12 +550,6 @@ function saveGiveawaySubmission(array $data): void
             LOCK_EX
         );
     }
-
-    file_put_contents(
-        $logFile,
-        json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . PHP_EOL,
-        FILE_APPEND | LOCK_EX
-    );
 }
 
 function sendSubmissionEmail(array $submission): bool
@@ -502,6 +560,18 @@ function sendSubmissionEmail(array $submission): bool
         !defined('ZEPTO_BOUNCE_ADDRESS') || ZEPTO_BOUNCE_ADDRESS === '' ||
         !defined('INVICTA_FORM_RECIPIENT') || INVICTA_FORM_RECIPIENT === ''
     ) {
+        logDebug('missing_email_config', [
+            'has_api_key' => defined('ZEPTO_API_KEY') && ZEPTO_API_KEY !== '',
+            'has_from_address' => defined('ZEPTO_FROM_ADDRESS') && ZEPTO_FROM_ADDRESS !== '',
+            'has_bounce_address' => defined('ZEPTO_BOUNCE_ADDRESS') && ZEPTO_BOUNCE_ADDRESS !== '',
+            'has_recipient' => defined('INVICTA_FORM_RECIPIENT') && INVICTA_FORM_RECIPIENT !== '',
+        ]);
+
+        return false;
+    }
+
+    if (!function_exists('curl_init')) {
+        logDebug('curl_missing');
         return false;
     }
 
@@ -518,7 +588,7 @@ function sendSubmissionEmail(array $submission): bool
             [
                 'email_address' => [
                     'address' => INVICTA_FORM_RECIPIENT,
-                    'name' => 'Invicta Roofing',
+                    'name' => 'Miguel',
                 ],
             ],
         ],
@@ -564,6 +634,11 @@ function sendSubmissionEmail(array $submission): bool
         return false;
     }
 
+    logDebug('email_sent', [
+        'http_code' => $httpCode,
+        'recipient' => INVICTA_FORM_RECIPIENT,
+    ]);
+
     return true;
 }
 
@@ -575,6 +650,12 @@ New Invicta Giveaway Inspection Request
 Submitted At:
 {$submission['submitted_at']}
 
+Source:
+{$submission['source']}
+
+Form Type:
+{$submission['form_type']}
+
 Contact Information:
 Name: {$submission['full_name']}
 Phone: {$submission['phone']}
@@ -583,7 +664,7 @@ Property Address: {$submission['property_address']}
 
 Appointment / Service:
 Preferred Date or Time: {$submission['preferred_date_time']}
-Requested Service: {$submission['service']}
+Requested Service: {$submission['service_requested']}
 How They Heard About Invicta: {$submission['how_did_you_hear_about_us']}
 
 Legal / Consent Confirmations:
