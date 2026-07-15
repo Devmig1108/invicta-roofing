@@ -1,4 +1,4 @@
-<form class="lead-form" action="/process-home-quick-form.php" method="post">
+<form id="quick-inspection-form" class="lead-form" action="/process-home-quick-form.php" method="post">
   <input type="hidden" name="form_token" value="<?= htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8') ?>" />
   <input type="hidden" name="form_type" value="home_quick_inspection" />
 

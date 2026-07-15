@@ -1,4 +1,4 @@
-<form class="lead-form large-form reveal" action="/process-home-detailed-form.php" method="post">
+<form id="detailed-inspection-form" class="lead-form large-form reveal" action="/process-home-detailed-form.php" method="post">
   <input type="hidden" name="form_token" value="<?= htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8') ?>" />
   <input type="hidden" name="form_type" value="home_detailed_inspection" />
 
