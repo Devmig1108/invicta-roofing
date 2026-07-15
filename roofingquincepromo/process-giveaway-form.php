@@ -91,7 +91,26 @@ function redirectBack(string $status, string $reason = ''): void
         $query['debug_reason'] = $reason;
     }
 
-    header('Location: quinceanera-giveaway.php?' . http_build_query($query));
+    /*
+     * Build a safe redirect path based on the processor's current folder.
+     *
+     * Example:
+     * Current script:
+     * /roofingquincepromo/process-giveaway-form.php
+     *
+     * Redirect target:
+     * /roofingquincepromo/quinceanera-giveaway.php?status=success
+     */
+    $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+    $scriptDir = str_replace('\\', '/', dirname($scriptName));
+
+    if ($scriptDir === '/' || $scriptDir === '.') {
+        $scriptDir = '';
+    }
+
+    $redirectPath = rtrim($scriptDir, '/') . '/quinceanera-giveaway.php';
+
+    header('Location: ' . $redirectPath . '?' . http_build_query($query), true, 303);
     exit;
 }
 
