@@ -1,3 +1,15 @@
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/config/secure_env.php';
+require_once __DIR__ . '/includes/form-page-helpers.php';
+
+$formToken = createSignedFormToken();
+
+$formStatus = homeFormStatusMessage();
+$currentFormStatusTarget = $_GET['form'] ?? '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,7 +86,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="tops">
+  <header class="site-header" id="top">
     <div class="announcement">
       <span>Free roof inspections</span>
       <span>Photo documentation</span>
@@ -135,28 +147,7 @@
           <p>Request a pressure-free roof evaluation. Invicta checks visible damage, wear, problem areas, and the best
             next step for your home.</p>
 
-          <form class="lead-form" action="#" method="post">
-            <label>
-              Full name
-              <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
-            </label>
-            <label>
-              Phone number
-              <input type="tel" name="phone" autocomplete="tel" placeholder="915-000-0000" required />
-            </label>
-            <label>
-              Roofing need
-              <select name="service" required>
-                <option value="">Select one</option>
-                <option>Roof Inspections</option>
-                <option>Roof Replacements</option>
-                <option>Insurance Support</option>
-                <option>Repairs & Maintenance</option>
-              </select>
-            </label>
-            <button class="btn btn-primary btn-full" type="submit">Request My Inspection</button>
-            <p class="form-note">No spam. No pressure. Just a clear roofing recommendation.</p>
-          </form>
+          <?php include __DIR__ . '/includes/forms/quick-inspection-form.php'; ?>
         </aside>
       </div>
     </section>
@@ -579,44 +570,7 @@
           </div>
         </div>
 
-        <form class="lead-form large-form reveal" action="#" method="post">
-          <div class="form-grid">
-            <label>
-              Full name
-              <input type="text" name="fullName" autocomplete="name" required />
-            </label>
-            <label>
-              Phone
-              <input type="tel" name="phone" autocomplete="tel" required />
-            </label>
-          </div>
-          <label>
-            Property address
-            <input type="text" name="address" autocomplete="street-address" placeholder="Street address, El Paso, TX" />
-          </label>
-          <label>
-            What do you need help with?
-            <select name="roofingNeed" required>
-              <option value="">Choose one</option>
-              <option>Roof Inspections</option>
-              <option>Roof Replacements</option>
-              <option>Insurance Support</option>
-              <option>Repairs & Maintenance</option>
-            </select>
-          </label>
-          <label>
-           How did you hear about us?
-            <textarea name="message" rows="4"
-              placeholder="Tell us how you found out about us."></textarea>
-          </label>
-          <label>
-            Notes
-            <textarea name="message" rows="4"
-              placeholder="Tell us about leaks, missing shingles, roof age, visible damage, or maintenance concerns."></textarea>
-          </label>
-          <button class="btn btn-primary btn-full" type="submit">Schedule My Free Inspection</button>
-          <p class="form-note">By submitting, you agree to be contacted about your roof inspection request.</p>
-        </form>
+        <?php include __DIR__ . '/includes/forms/detailed-inspection-form.php'; ?>
       </div>
     </section>
 
