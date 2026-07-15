@@ -592,12 +592,6 @@ function sendSubmissionEmail(array $submission): bool
                 ],
             ],
         ],
-        'reply_to' => [
-            [
-                'address' => $submission['email'],
-                'name' => $submission['full_name'],
-            ],
-        ],
         'subject' => $subject,
         'htmlbody' => nl2br(htmlspecialchars($body, ENT_QUOTES, 'UTF-8')),
         'textbody' => $body,
