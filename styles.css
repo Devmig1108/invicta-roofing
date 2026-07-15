@@ -749,10 +749,12 @@ h3 {
 
 .quote-grid .lowlight {
   color: var(--muted);
+  display: inline;
 }
 
 .quote-grid .highlight {
   color: var(--pink-2);
+  display: inline;
 }
 
 .process-grid {
