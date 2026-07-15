@@ -27,7 +27,7 @@ define('TURNSTILE_SECRET_KEY', '');
  * ZEPTO_API_KEY should be the Send Mail Token only.
  * Do NOT include "Zoho-enczapikey" here because the processor adds that prefix.
  */
-define('ZEPTO_API_KEY', 'Zoho-enczapikey wSsVR61xqEb0Dfx5nDelIr1qn1VSAFzxQUQrjFSlv3b7Hf+Xp8czlRXPAAagSKQaQzRrEmcapb59y0pR1GYMjogly1tWXiiF9mqRe1U4J3x17qnvhDzKV25UlhaOJIsLxAVvnGNoEMkr+g==');
+define('ZEPTO_API_KEY', 'wSsVR61xqEb0Dfx5nDelIr1qn1VSAFzxQUQrjFSlv3b7Hf+Xp8czlRXPAAagSKQaQzRrEmcapb59y0pR1GYMjogly1tWXiiF9mqRe1U4J3x17qnvhDzKV25UlhaOJIsLxAVvnGNoEMkr+g==');
 define('ZEPTO_FROM_ADDRESS', 'services@ervotechep.com');
 define('ZEPTO_FROM_NAME', 'Invicta Roofing');
 define('ZEPTO_BOUNCE_ADDRESS', 'bounce@bounce-zem.ervotechep.com');
