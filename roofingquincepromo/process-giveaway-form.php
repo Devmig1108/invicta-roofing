@@ -108,7 +108,7 @@ function redirectBack(string $status, string $reason = ''): void
         $scriptDir = '';
     }
 
-    $redirectPath = rtrim($scriptDir, '/') . '/roofingquincepromo/';
+    $redirectPath = rtrim($scriptDir, '/') . '/';
 
     header('Location: ' . $redirectPath . '?' . http_build_query($query), true, 303);
     exit;
