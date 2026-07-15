@@ -737,7 +737,7 @@ function buildEmailHtml(array $submission): string
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 680px; background: #ffffff; border-radius: 18px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 10px 30px rgba(17,24,39,.08);">
                     
                     <tr>
-                        <td style="background: #7b0e7b; padding: 26px 30px;">
+                        <td style="background: #ed1b72; padding: 26px 30px;">
                             <div style="font-size: 13px; line-height: 18px; color: #f9fafb; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;">
                                 Invicta Roofing Website
                             </div>
