@@ -634,7 +634,7 @@ function redirectHomeForm(string $formKind, string $status, string $reason = '')
         $scriptDir = '';
     }
 
-    $anchor = $formKind === 'detailed' ? 'detailed-inspection-form' : 'quick-inspection-form';
+    $anchor = $formKind === 'detailed' ? 'inspection' : 'main';
     $redirectPath = rtrim($scriptDir, '/') . '/index.php';
 
     header('Location: ' . $redirectPath . '?' . http_build_query($query) . '#' . $anchor, true, 303);
