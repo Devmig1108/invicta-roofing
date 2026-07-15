@@ -99,7 +99,7 @@ function redirectBack(string $status, string $reason = ''): void
      * /roofingquincepromo/process-giveaway-form.php
      *
      * Redirect target:
-     * /roofingquincepromo/quinceanera-giveaway.php?status=success
+     * /roofingquincepromo/?status=success
      */
     $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
     $scriptDir = str_replace('\\', '/', dirname($scriptName));
@@ -108,7 +108,7 @@ function redirectBack(string $status, string $reason = ''): void
         $scriptDir = '';
     }
 
-    $redirectPath = rtrim($scriptDir, '/') . '/quinceanera-giveaway.php';
+    $redirectPath = rtrim($scriptDir, '/') . 'roofingquincepromo/';
 
     header('Location: ' . $redirectPath . '?' . http_build_query($query), true, 303);
     exit;
