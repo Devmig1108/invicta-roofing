@@ -254,7 +254,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
           </figure>
 
           <div class="preview-video">
-            <video controls preload="metadata" poster="images/featured.jpeg" aria-label="Quinceañera giveaway campaign video">
+            <video controls preload="metadata" poster="images/featured.jpg" aria-label="Quinceañera giveaway campaign video">
               <source src="media/campaign-preview2.mov" type="video/mp4" />
             </video>
           </div>
