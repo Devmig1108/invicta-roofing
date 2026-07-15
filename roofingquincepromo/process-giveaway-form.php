@@ -575,26 +575,27 @@ function sendSubmissionEmail(array $submission): bool
         return false;
     }
 
-    $subject = 'Invicta Giveaway Inspection Request - ' . $submission['full_name'];
+    $subject = 'New Invicta Roof Inspection Request - ' . $submission['full_name'];
 
-    $body = buildEmailBody($submission);
+    $textBody = buildEmailBody($submission);
+    $htmlBody = buildEmailHtml($submission);
 
     $payload = [
         'from' => [
             'address' => ZEPTO_FROM_ADDRESS,
-            'name' => defined('ZEPTO_FROM_NAME') ? ZEPTO_FROM_NAME : 'Invicta Roofing',
+            'name' => defined('ZEPTO_FROM_NAME') ? ZEPTO_FROM_NAME : 'Invicta Roofing Website',
         ],
         'to' => [
             [
                 'email_address' => [
                     'address' => INVICTA_FORM_RECIPIENT,
-                    'name' => 'Miguel',
+                    'name' => defined('INVICTA_FORM_RECIPIENT_NAME') ? INVICTA_FORM_RECIPIENT_NAME : 'Invicta Roofing',
                 ],
             ],
         ],
         'subject' => $subject,
-        'htmlbody' => nl2br(htmlspecialchars($body, ENT_QUOTES, 'UTF-8')),
-        'textbody' => $body,
+        'htmlbody' => $htmlBody,
+        'textbody' => $textBody,
         'bounce_address' => ZEPTO_BOUNCE_ADDRESS,
     ];
 
@@ -636,19 +637,191 @@ function sendSubmissionEmail(array $submission): bool
     return true;
 }
 
+function emailEscape(string $value): string
+{
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}
+
+function emailFieldRow(string $label, string $value): string
+{
+    $label = emailEscape($label);
+    $value = $value !== '' ? emailEscape($value) : 'Not provided';
+
+    return <<<HTML
+<tr>
+    <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+        <div style="font-size: 12px; line-height: 16px; color: #6b7280; text-transform: uppercase; letter-spacing: .04em; font-weight: 700;">{$label}</div>
+        <div style="font-size: 16px; line-height: 24px; color: #111827; font-weight: 600; margin-top: 3px;">{$value}</div>
+    </td>
+</tr>
+HTML;
+}
+
+function emailBadge(string $label, bool $active = true): string
+{
+    $label = emailEscape($label);
+
+    $background = $active ? '#ecfdf5' : '#f9fafb';
+    $color = $active ? '#047857' : '#6b7280';
+    $border = $active ? '#a7f3d0' : '#e5e7eb';
+
+    return <<<HTML
+<span style="display: inline-block; margin: 0 6px 8px 0; padding: 7px 10px; border-radius: 999px; border: 1px solid {$border}; background: {$background}; color: {$color}; font-size: 13px; line-height: 16px; font-weight: 700;">
+    {$label}
+</span>
+HTML;
+}
+
+function buildEmailHtml(array $submission): string
+{
+    $name = emailEscape($submission['full_name']);
+    $phone = emailEscape($submission['phone']);
+    $email = emailEscape($submission['email']);
+    $address = emailEscape($submission['property_address']);
+    $submittedAt = emailEscape($submission['submitted_at']);
+
+    $textOptIn = $submission['text_reminders_opt_in'] === 'Yes';
+
+    $contactRows =
+        emailFieldRow('Full Name', $submission['full_name']) .
+        emailFieldRow('Phone Number', $submission['phone']) .
+        emailFieldRow('Email Address', $submission['email']) .
+        emailFieldRow('Property Address', $submission['property_address']);
+
+    $requestRows =
+        emailFieldRow('Preferred Date / Time', $submission['preferred_date_time']) .
+        emailFieldRow('Requested Service', $submission['service_requested']) .
+        emailFieldRow('How They Heard About Invicta', $submission['how_did_you_hear_about_us']);
+
+    $messageRow = emailFieldRow('Message / Notes', $submission['message']);
+
+    $homeownerBadge = emailBadge('Homeowner Confirmed');
+    $ageBadge = emailBadge('18+ Confirmed');
+    $rulesBadge = emailBadge('Official Rules Accepted');
+    $textBadge = emailBadge($textOptIn ? 'Text Reminders: Yes' : 'Text Reminders: No', $textOptIn);
+
+    return <<<HTML
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Invicta Roof Inspection Request</title>
+</head>
+<body style="margin: 0; padding: 0; background: #f3f4f6; font-family: Arial, Helvetica, sans-serif; color: #111827;">
+    <div style="display: none; max-height: 0; overflow: hidden; opacity: 0;">
+        New roof inspection request from {$name}. Phone: {$phone}. Email: {$email}.
+    </div>
+
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background: #f3f4f6; margin: 0; padding: 28px 12px;">
+        <tr>
+            <td align="center">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 680px; background: #ffffff; border-radius: 18px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 10px 30px rgba(17,24,39,.08);">
+                    
+                    <tr>
+                        <td style="background: #4f5962; padding: 26px 30px;">
+                            <div style="font-size: 13px; line-height: 18px; color: #f9fafb; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;">
+                                Invicta Roofing Website
+                            </div>
+                            <h1 style="margin: 8px 0 0; font-size: 26px; line-height: 32px; color: #ffffff; font-weight: 800;">
+                                New Roof Inspection Request
+                            </h1>
+                            <p style="margin: 8px 0 0; font-size: 15px; line-height: 22px; color: #e5e7eb;">
+                                A visitor submitted the Quinceañera promotion inspection form.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 26px 30px 12px;">
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px;">
+                                        <div style="font-size: 12px; line-height: 16px; color: #6b7280; text-transform: uppercase; letter-spacing: .04em; font-weight: 700;">
+                                            Quick Contact
+                                        </div>
+                                        <div style="font-size: 22px; line-height: 28px; color: #111827; font-weight: 800; margin-top: 4px;">
+                                            {$name}
+                                        </div>
+                                        <div style="font-size: 15px; line-height: 24px; color: #374151; margin-top: 8px;">
+                                            <strong>Phone:</strong> {$phone}<br>
+                                            <strong>Email:</strong> {$email}<br>
+                                            <strong>Address:</strong> {$address}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 12px 30px;">
+                            <h2 style="margin: 0 0 8px; font-size: 18px; line-height: 24px; color: #111827;">
+                                Contact Details
+                            </h2>
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                {$contactRows}
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 20px 30px 12px;">
+                            <h2 style="margin: 0 0 8px; font-size: 18px; line-height: 24px; color: #111827;">
+                                Request Details
+                            </h2>
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                {$requestRows}
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 20px 30px 12px;">
+                            <h2 style="margin: 0 0 10px; font-size: 18px; line-height: 24px; color: #111827;">
+                                Confirmations
+                            </h2>
+                            <div>
+                                {$homeownerBadge}
+                                {$ageBadge}
+                                {$rulesBadge}
+                                {$textBadge}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 20px 30px 26px;">
+                            <h2 style="margin: 0 0 8px; font-size: 18px; line-height: 24px; color: #111827;">
+                                Message
+                            </h2>
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                {$messageRow}
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="background: #f9fafb; padding: 18px 30px; border-top: 1px solid #e5e7eb;">
+                            <p style="margin: 0; font-size: 13px; line-height: 20px; color: #6b7280;">
+                                Submitted at {$submittedAt}<br>
+                                Source: Invicta Roofing website form
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+HTML;
+}
+
 function buildEmailBody(array $submission): string
 {
     return <<<TEXT
-New Invicta Giveaway Inspection Request
-
-Submitted At:
-{$submission['submitted_at']}
-
-Source:
-{$submission['source']}
-
-Form Type:
-{$submission['form_type']}
+New Invicta Roof Inspection Request
 
 Contact Information:
 Name: {$submission['full_name']}
@@ -656,12 +829,12 @@ Phone: {$submission['phone']}
 Email: {$submission['email']}
 Property Address: {$submission['property_address']}
 
-Appointment / Service:
+Request Details:
 Preferred Date or Time: {$submission['preferred_date_time']}
 Requested Service: {$submission['service_requested']}
 How They Heard About Invicta: {$submission['how_did_you_hear_about_us']}
 
-Legal / Consent Confirmations:
+Confirmations:
 Homeowner Confirmed: {$submission['homeowner_confirmed']}
 18 or Older Confirmed: {$submission['age_confirmed']}
 Official Rules Accepted: {$submission['official_rules_accepted']}
@@ -670,7 +843,12 @@ Text Reminders Opt-In: {$submission['text_reminders_opt_in']}
 Message:
 {$submission['message']}
 
+Submitted At:
+{$submission['submitted_at']}
+
 Technical:
+Source: {$submission['source']}
+Form Type: {$submission['form_type']}
 IP Address: {$submission['ip_address']}
 User Agent: {$submission['user_agent']}
 TEXT;
