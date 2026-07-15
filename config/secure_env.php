@@ -40,5 +40,5 @@ define('INVICTA_FORM_RECIPIENT', 'miguel@ervotechep.com');
 /**
  * Logs.
  */
-define('FORM_LOG_DIR', dirname(__DIR__) . '/storage/private');
+define('FORM_LOG_DIR', realpath(__DIR__ . '/..') . '/storage/private');
 define('FORM_LOG_FILE', FORM_LOG_DIR . '/giveaway-submissions.jsonl');
