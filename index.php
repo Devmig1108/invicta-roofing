@@ -74,7 +74,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
+  <header class="site-header" id="tops">
     <div class="announcement">
       <span>Free roof inspections</span>
       <span>Photo documentation</span>
@@ -82,7 +82,7 @@
     </div>
 
     <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Invicta Roofing home">
+      <a class="brand" href="#main" aria-label="Invicta Roofing home">
         <img class="brand-logo" src="images/logo_md_dark.svg" alt="Invicta Roofing" width="280" height="84" />
       </a>
 
@@ -692,7 +692,7 @@
 
     <div class="container footer-bottom">
       <span>© 2026 Invicta Roofing. All rights reserved.</span>
-      <a href="#top">Back to top</a>
+      <a href="#main">Back to top</a>
     </div>
   </footer>
 
