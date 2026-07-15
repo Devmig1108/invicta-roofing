@@ -3,7 +3,7 @@
 define('FORM_DEBUG', true);
 define('FORM_DELIVERY_MODE', 'email');
 
-define('FORM_TOKEN_SECRET', 'your-long-random-secret-here');
+define('FORM_TOKEN_SECRET', 'Zoho-enczapikey wSsVR61xqEb0Dfx5nDelIr1qn1VSAFzxQUQrjFSlv3b7Hf+Xp8czlRXPAAagSKQaQzRrEmcapb59y0pR1GYMjogly1tWXiiF9mqRe1U4J3x17qnvhDzKV25UlhaOJIsLxAVvnGNoEMkr+g==');
 define('FORM_TOKEN_MAX_AGE_SECONDS', 7200);
 
 define('FORM_RATE_LIMIT_WINDOW_SECONDS', 60);
