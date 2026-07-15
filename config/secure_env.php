@@ -30,7 +30,7 @@ define('TURNSTILE_SECRET_KEY', '');
 define('ZEPTO_API_KEY', 'wSsVR61xqEb0Dfx5nDelIr1qn1VSAFzxQUQrjFSlv3b7Hf+Xp8czlRXPAAagSKQaQzRrEmcapb59y0pR1GYMjogly1tWXiiF9mqRe1U4J3x17qnvhDzKV25UlhaOJIsLxAVvnGNoEMkr+g==');
 define('ZEPTO_FROM_ADDRESS', 'info@invictaroofs.com');
 define('ZEPTO_FROM_NAME', 'Invicta Roofing');
-define('ZEPTO_BOUNCE_ADDRESS', 'bounce@bounce-zem.ervotechep.com');
+define('ZEPTO_BOUNCE_ADDRESS', 'bounce@bounce-zem.invictaroofs.com');
 
 /**
  * Testing recipient.
