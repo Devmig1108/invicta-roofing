@@ -108,7 +108,7 @@ $currentFormStatusTarget = $_GET['form'] ?? '';
         <a href="#services">Services</a>
         <a href="#results">Results</a>
         <a href="#reviews">Reviews</a>
-        <a href="./about">Process</a>
+        <a href="./about">About</a>
         <a href="./contact">Contact</a>
       </div>
 
