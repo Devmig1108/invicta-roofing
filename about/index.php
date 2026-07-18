@@ -117,7 +117,7 @@ declare(strict_types=1);
                 </div>
 
                 <div class="about-hero-media reveal">
-                    <img src="/images/rooftop.jpg" alt="Invicta Roofing roof inspection work in El Paso" />
+                    <img src="../images/rooftop.jpg" alt="Invicta Roofing roof inspection work in El Paso" />
                     <div class="about-media-card">
                         <span>Invicta Standard</span>
                         <strong>Clear answers before big decisions.</strong>
