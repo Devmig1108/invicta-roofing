@@ -95,7 +95,7 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
 
       <div class="nav-menu" id="nav-menu">
         <a href="/">Home</a>
-        <a href="/about/">About</a>
+        <a href="../about/">About</a>
         <a href="/#services">Services</a>
         <a href="/#results">Results</a>
         <a href="/#reviews">Reviews</a>
@@ -322,7 +322,7 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
     <div class="container footer-grid">
       <div>
         <a class="brand footer-brand" href="/" aria-label="Invicta Roofing home">
-          <img class="brand-logo footer-logo" src="/images/logo_md.png" alt="Invicta Roofing" width="280" height="84" loading="lazy" />
+          <img class="brand-logo footer-logo" src="../images/logo_md.png" alt="Invicta Roofing" width="280" height="84" loading="lazy" />
         </a>
         <p>Undefeated roofing for El Paso homes. Family-approved. Built to be undefeated.</p>
       </div>

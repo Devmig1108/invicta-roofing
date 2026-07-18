@@ -68,7 +68,7 @@ declare(strict_types=1);
 
         <nav class="nav container" aria-label="Primary navigation">
             <a class="brand" href="/" aria-label="Invicta Roofing home">
-                <img class="brand-logo" src="/images/logo_md_dark.svg" alt="Invicta Roofing" width="280" height="84" />
+                <img class="brand-logo" src="../images/logo_md_dark.svg" alt="Invicta Roofing" width="280" height="84" />
             </a>
 
             <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -79,11 +79,11 @@ declare(strict_types=1);
 
             <div class="nav-menu" id="nav-menu">
                 <a href="/">Home</a>
-                <a href="/about/" class="is-active">About</a>
+                <a href="../about/" class="is-active">About</a>
                 <a href="/#services">Services</a>
                 <a href="/#results">Results</a>
                 <a href="/#reviews">Reviews</a>
-                <a href="/contact/">Contact</a>
+                <a href="../contact/">Contact</a>
             </div>
 
             <a class="nav-call" href="tel:+19156301349">915-630-1349</a>
