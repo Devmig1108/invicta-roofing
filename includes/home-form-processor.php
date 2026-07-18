@@ -627,18 +627,50 @@ function redirectHomeForm(string $formKind, string $status, string $reason = '')
         $query['debug_reason'] = $reason;
     }
 
-    $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
-    $scriptDir = str_replace('\\', '/', dirname($scriptName));
+    $defaultPath = '/index.php';
+    $defaultAnchor = $formKind === 'detailed'
+        ? 'detailed-inspection-form'
+        : 'quick-inspection-form';
 
-    if ($scriptDir === '/' || $scriptDir === '.') {
-        $scriptDir = '';
-    }
-
-    $anchor = $formKind === 'detailed' ? 'inspection' : 'main';
-    $redirectPath = rtrim($scriptDir, '/') . '/index.php';
+    $redirectPath = safeHomeFormRedirectPath(postValue('redirect_path', $defaultPath));
+    $anchor = safeHomeFormAnchor(postValue('redirect_anchor', $defaultAnchor));
 
     header('Location: ' . $redirectPath . '?' . http_build_query($query) . '#' . $anchor, true, 303);
     exit;
+}
+
+function safeHomeFormRedirectPath(string $path): string
+{
+    $path = trim($path);
+
+    if ($path === '') {
+        return '/index.php';
+    }
+
+    if ($path[0] !== '/') {
+        return '/index.php';
+    }
+
+    if (substr($path, 0, 2) === '//') {
+        return '/index.php';
+    }
+
+    if (!preg_match('/^\/[A-Za-z0-9\/._-]*$/', $path)) {
+        return '/index.php';
+    }
+
+    return $path;
+}
+
+function safeHomeFormAnchor(string $anchor): string
+{
+    $anchor = trim($anchor);
+
+    if (!preg_match('/^[A-Za-z0-9_-]{1,80}$/', $anchor)) {
+        return 'detailed-inspection-form';
+    }
+
+    return $anchor;
 }
 
 function postValue(string $key, string $default = ''): string

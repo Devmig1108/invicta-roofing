@@ -1,6 +1,13 @@
+<?php
+$detailFormRedirectPath = $detailFormRedirectPath ?? '/index.php';
+$detailFormRedirectAnchor = $detailFormRedirectAnchor ?? 'detailed-inspection-form';
+?>
+
 <form id="detailed-inspection-form" class="lead-form large-form reveal" action="/process-home-detailed-form.php" method="post">
   <input type="hidden" name="form_token" value="<?= htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8') ?>" />
   <input type="hidden" name="form_type" value="home_detailed_inspection" />
+  <input type="hidden" name="redirect_path" value="<?= htmlspecialchars($detailFormRedirectPath, ENT_QUOTES, 'UTF-8') ?>" />
+  <input type="hidden" name="redirect_anchor" value="<?= htmlspecialchars($detailFormRedirectAnchor, ENT_QUOTES, 'UTF-8') ?>" />
 
   <div class="website-verification-wrap" aria-hidden="true">
     <label>
