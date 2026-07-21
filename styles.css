@@ -2306,7 +2306,7 @@ h3 {
 }
 
 .nav-menu a.is-active {
-  color: var(--accent, #ffffff);
+  color: var(--accent, #ffc7fa);
 }
 
 @media (max-width: 980px) {

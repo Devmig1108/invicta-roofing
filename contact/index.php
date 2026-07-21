@@ -21,7 +21,8 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Contact Invicta Roofing | Free Roof Inspections in El Paso, TX</title>
-  <meta name="description" content="Contact Invicta Roofing in El Paso, Texas to schedule a free roof inspection, ask about roof replacement, roof repair, coatings, or insurance claim support." />
+  <meta name="description"
+    content="Contact Invicta Roofing in El Paso, Texas to schedule a free roof inspection, ask about roof replacement, roof repair, coatings, or insurance claim support." />
   <link rel="canonical" href="https://invictaroofs.com/contact/" />
   <link rel="icon" type="image/png" href="/images/logo.png">
 
@@ -99,7 +100,7 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
         <a href="/#services">Services</a>
         <a href="/#results">Results</a>
         <a href="/#reviews">Reviews</a>
-        <a href="/contact/" class="is-active">Contact</a>
+        <a href="../contact/" class="is-active">Contact</a>
       </div>
 
       <a class="nav-call" href="tel:+19156301349">915-630-1349</a>
@@ -133,7 +134,8 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
           <span class="small-label">Fastest way to start</span>
           <h2>Call or submit the form.</h2>
           <p>
-            A team member will follow up to learn what is happening with your roof and help schedule the right next step.
+            A team member will follow up to learn what is happening with your roof and help schedule the right next
+            step.
           </p>
 
           <div class="contact-method-list">
@@ -224,7 +226,8 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
         <div class="section-heading centered reveal">
           <p class="eyebrow">What can we help with?</p>
           <h2>Start with the roofing service that fits your situation.</h2>
-          <p class="eyebrow">Not every roof needs the same solution. Invicta Roofing helps homeowners understand the condition of their roof and choose the right next step.</p>
+          <p class="eyebrow">Not every roof needs the same solution. Invicta Roofing helps homeowners understand the
+            condition of their roof and choose the right next step.</p>
         </div>
 
         <div class="contact-service-grid">
@@ -272,16 +275,16 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
 
           <div class="mini-cta-row">
             <a class="btn btn-dark" href="tel:+19156301349">Call 915-630-1349</a>
-            <a class="btn btn-outline-dark" href="https://www.google.com/maps/search/?api=1&query=509%20Giles%20Rd%20Suite%20A%20El%20Paso%20TX%2079915" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn btn-outline-dark"
+              href="https://www.google.com/maps/search/?api=1&query=509%20Giles%20Rd%20Suite%20A%20El%20Paso%20TX%2079915"
+              target="_blank" rel="noopener">Open in Maps</a>
           </div>
         </div>
 
         <div class="contact-map-card reveal">
-          <iframe
-            title="Map to Invicta Roofing"
+          <iframe title="Map to Invicta Roofing"
             src="https://www.google.com/maps?q=509%20Giles%20Rd%20Suite%20A%20El%20Paso%20TX%2079915&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
@@ -296,22 +299,26 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
         <div class="faq-list reveal">
           <details open>
             <summary>Is the roof inspection really free?</summary>
-            <p>Yes. Invicta Roofing offers free roof inspections so homeowners can understand what their roof needs before making a decision.</p>
+            <p>Yes. Invicta Roofing offers free roof inspections so homeowners can understand what their roof needs
+              before making a decision.</p>
           </details>
 
           <details>
             <summary>Do I need to know what service I need before calling?</summary>
-            <p>No. If you are unsure whether you need a repair, replacement, coating, or inspection, Invicta can start with an evaluation and explain your options.</p>
+            <p>No. If you are unsure whether you need a repair, replacement, coating, or inspection, Invicta can start
+              with an evaluation and explain your options.</p>
           </details>
 
           <details>
             <summary>Can I send photos of my roof?</summary>
-            <p>Yes. You can email photos and details to Support@invictaroofs.com, or submit the form and explain what you are seeing.</p>
+            <p>Yes. You can email photos and details to Support@invictaroofs.com, or submit the form and explain what
+              you are seeing.</p>
           </details>
 
           <details>
             <summary>Do you help with insurance questions?</summary>
-            <p>Yes. Invicta Roofing can document visible roof conditions and help homeowners understand possible next steps related to roofing and insurance questions.</p>
+            <p>Yes. Invicta Roofing can document visible roof conditions and help homeowners understand possible next
+              steps related to roofing and insurance questions.</p>
           </details>
         </div>
       </div>
@@ -322,7 +329,8 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
     <div class="container footer-grid">
       <div>
         <a class="brand footer-brand" href="/" aria-label="Invicta Roofing home">
-          <img class="brand-logo footer-logo" src="../images/logo_md.png" alt="Invicta Roofing" width="280" height="84" loading="lazy" />
+          <img class="brand-logo footer-logo" src="../images/logo_md.png" alt="Invicta Roofing" width="280" height="84"
+            loading="lazy" />
         </a>
         <p>Undefeated roofing for El Paso homes. Family-approved. Built to be undefeated.</p>
       </div>

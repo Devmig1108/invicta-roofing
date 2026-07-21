@@ -105,11 +105,12 @@ $currentFormStatusTarget = $_GET['form'] ?? '';
       </button>
 
       <div class="nav-menu" id="nav-menu">
-        <a href="#services">Services</a>
-        <a href="#results">Results</a>
-        <a href="#reviews">Reviews</a>
-        <a href="./about">About</a>
-        <a href="./contact">Contact</a>
+        <a href="/">Home</a>
+        <a href="../about/">About</a>
+        <a href="/#services">Services</a>
+        <a href="/#results">Results</a>
+        <a href="/#reviews">Reviews</a>
+        <a href="../contact/">Contact</a>
       </div>
 
       <a class="nav-call" href="tel:+19156301349">915-630-1349</a>
