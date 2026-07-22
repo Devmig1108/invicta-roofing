@@ -2307,7 +2307,7 @@ h3 {
 
 .nav-menu a.is-active {
   background-color: var(--accent, #ffc7fa);
-  color: white;
+  color: var(--charcoal-3);
 }
 
 @media (max-width: 980px) {
