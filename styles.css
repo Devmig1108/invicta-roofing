@@ -2549,6 +2549,116 @@ h3 {
   justify-self: end;
 }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-dropdown-toggle::after {
+  content: "▾";
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.75em;
+  transform: translateY(-1px);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 270px;
+  padding: 10px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  box-shadow: 0 24px 70px rgba(17, 24, 39, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  z-index: 50;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  color: #111827;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a.is-active {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.is-open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown.is-active > .nav-dropdown-toggle,
+.nav-menu a.is-active {
+  color: var(--accent, #ffffff);
+}
+
+@media (max-width: 980px) {
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 12px 0;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    min-width: 0;
+    width: 100%;
+    margin: 4px 0 10px;
+    padding: 8px;
+    border-radius: 14px;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    display: none;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu {
+    display: none;
+    transform: none;
+  }
+
+  .nav-dropdown.is-open .nav-dropdown-menu {
+    display: block;
+    transform: none;
+  }
+
+  .nav-dropdown-menu a {
+    white-space: normal;
+  }
+}
+
 @media (max-width: 1180px) {
   .service-title {
     font-size: clamp(3.8rem, 7vw, 6.2rem);

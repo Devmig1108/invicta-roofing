@@ -9,115 +9,71 @@ $formToken = createSignedFormToken();
 
 $formStatus = homeFormStatusMessage();
 $currentFormStatusTarget = $_GET['form'] ?? '';
+
+$basePath = '';
+$currentPage = 'home';
+
+$pageTitle = 'Invicta Roofing | El Paso Roof Inspections, Replacements & Repairs';
+$pageDescription = 'Invicta Roofing is a woman-led roofing company in El Paso, Texas offering roof inspections, roof replacements, insurance support, and repairs and maintenance.';
+$pageKeywords = 'roofing El Paso, roof inspection El Paso, roof replacement El Paso, roof repair El Paso, roofing contractor El Paso, insurance support roofing';
+$canonicalUrl = 'https://invictaroofs.com/';
+$ogTitle = 'Invicta Roofing | Undefeated Roofing For El Paso Homes';
+$ogDescription = 'Roofs built to last, not just to pass. Schedule your free roof inspection with Invicta Roofing in El Paso.';
+$ogUrl = 'https://invictaroofs.com/';
+
+$detailFormRedirectPath = '/';
+$detailFormRedirectAnchor = 'inspection';
+
+$schemaJson = <<<'JSON'
+{
+  "@context": "https://schema.org",
+  "@type": "RoofingContractor",
+  "name": "Invicta Roofing",
+  "url": "https://invictaroofs.com/",
+  "telephone": "+1-915-630-1349",
+  "email": "Support@invictaroofs.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "509 Giles Rd. Suite A",
+    "addressLocality": "El Paso",
+    "addressRegion": "TX",
+    "postalCode": "79915",
+    "addressCountry": "US"
+  },
+  "areaServed": "El Paso, Texas",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "08:00",
+      "closes": "12:00"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Invicta Roofing Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Inspections" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Replacements" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Insurance Support" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Repairs & Maintenance" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.instagram.com/invictaroofing915/",
+    "https://www.facebook.com/profile.php?id=61587098842468"
+  ]
+}
+JSON;
+
+include $basePath . 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invicta Roofing | El Paso Roof Inspections, Replacements & Repairs</title>
-  <meta name="description"
-    content="Invicta Roofing is a woman-led roofing company in El Paso, Texas offering roof inspections, roof replacements, insurance support, and repairs and maintenance." />
-  <meta name="keywords"
-    content="roofing El Paso, roof inspection El Paso, roof replacement El Paso, roof repair El Paso, roofing contractor El Paso, insurance support roofing" />
-  <link rel="canonical" href="https://invictaroofs.com/" />
-  <link rel="icon" type="image/png" href="/images/logo.png">
-
-  <meta property="og:title" content="Invicta Roofing | Unconquered Roofing For El Paso Homes" />
-  <meta property="og:description"
-    content="Roofs built to last, not just to pass. Schedule your free roof inspection with Invicta Roofing in El Paso." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://invictaroofs.com/" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RoofingContractor",
-    "name": "Invicta Roofing",
-    "url": "https://invictaroofs.com/",
-    "telephone": "+1-915-630-1349",
-    "email": "Support@invictaroofs.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "509 Giles Rd. Suite A",
-      "addressLocality": "El Paso",
-      "addressRegion": "TX",
-      "postalCode": "79915",
-      "addressCountry": "US"
-    },
-    "areaServed": "El Paso, Texas",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday", "Sunday"],
-        "opens": "08:00",
-        "closes": "12:00"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Invicta Roofing Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Inspections" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Replacements" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Insurance Support" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Repairs & Maintenance" } }
-      ]
-    },
-    "sameAs": ["https://www.instagram.com/invictaroofing915/"]
-  }
-  </script>
-</head>
-
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" id="top">
-    <div class="announcement">
-      <span>Free roof inspections</span>
-      <span>Photo documentation</span>
-      <span>Insurance support</span>
-    </div>
-
-    <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="#main" aria-label="Invicta Roofing home">
-        <img class="brand-logo" src="images/logo_md_dark.svg" alt="Invicta Roofing" width="280" height="84" />
-      </a>
-
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="nav-menu" id="nav-menu">
-        <a href="/">Home</a>
-        <a href="../about/">About</a>
-        <a href="/#services">Services</a>
-        <a href="/#results">Results</a>
-        <a href="/#reviews">Reviews</a>
-        <a href="../contact/">Contact</a>
-      </div>
-
-      <a class="nav-call" href="tel:+19156301349">915-630-1349</a>
-    </nav>
-  </header>
-
-  <main id="main">
     <section class="hero section-dark">
       <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
         <source
@@ -611,74 +567,6 @@ $currentFormStatusTarget = $_GET['form'] ?? '';
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="footer section-dark">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand footer-brand" href="#top" aria-label="Invicta Roofing home">
-          <img class="brand-logo footer-logo" src="images/logo_md.png" alt="Invicta Roofing" width="280" height="84"
-            loading="lazy" />
-        </a>
-        <p>Undedfeated roofing for El Paso homes. Family-approved. Built to be undefeated.</p>
-      </div>
 
-      <div>
-        <h2>Services</h2>
-        <a href="#services">Roof Inspections</a>
-        <a href="#services">Roof Replacements</a>
-        <a href="#insurance">Insurance Support</a>
-        <a href="#services">Repairs & Maintenance</a>
-      </div>
-
-      <div>
-        <h2>Contact</h2>
-        <p>509 Giles Rd. Suite A<br />El Paso, TX 79915</p>
-        <a href="tel:+19156301349">915-630-1349</a>
-        <a href="mailto:Support@invictaroofs.com">Support@invictaroofs.com</a>
-      </div>
-
-      <div>
-        <h2>Hours</h2>
-        <p>Monday - Friday<br />8:00 AM - 5:00 PM</p>
-        <p>Saturday & Sunday<br />8:00 AM - 12:00 PM</p>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <span>© 2026 Invicta Roofing. All rights reserved.</span>
-      <a href="#main">Back to top</a>
-    </div>
-  </footer>
-
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
-
-    toggle.addEventListener('click', () => {
-      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isOpen));
-      menu.classList.toggle('is-open');
-    });
-
-    document.querySelectorAll('.nav-menu a').forEach((link) => {
-      link.addEventListener('click', () => {
-        toggle.setAttribute('aria-expanded', 'false');
-        menu.classList.remove('is-open');
-      });
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-  </script>
-</body>
-
-</html>
+<?php include $basePath . 'includes/footer.php'; ?>

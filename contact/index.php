@@ -12,102 +12,55 @@ $currentFormStatusTarget = $_GET['form'] ?? '';
 
 $detailFormRedirectPath = '/contact/';
 $detailFormRedirectAnchor = 'detailed-inspection-form';
-?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+$basePath = '../';
+$currentPage = 'contact';
 
-  <title>Contact Invicta Roofing | Free Roof Inspections in El Paso, TX</title>
-  <meta name="description"
-    content="Contact Invicta Roofing in El Paso, Texas to schedule a free roof inspection, ask about roof replacement, roof repair, coatings, or insurance claim support." />
-  <link rel="canonical" href="https://invictaroofs.com/contact/" />
-  <link rel="icon" type="image/png" href="/images/logo.png">
+$pageTitle = 'Contact Invicta Roofing | Free Roof Inspections in El Paso, TX';
+$pageDescription = 'Contact Invicta Roofing in El Paso, Texas to schedule a free roof inspection, ask about roof replacement, roof repair, coatings, or insurance claim support.';
+$pageKeywords = 'contact Invicta Roofing, free roof inspection El Paso, El Paso roofing company, roof replacement El Paso, roof repair El Paso';
+$canonicalUrl = 'https://invictaroofs.com/contact/';
+$ogTitle = 'Contact Invicta Roofing | El Paso Roofing Company';
+$ogDescription = 'Schedule a free roof inspection with Invicta Roofing in El Paso, Texas.';
+$ogUrl = 'https://invictaroofs.com/contact/';
 
-  <meta property="og:title" content="Contact Invicta Roofing | El Paso Roofing Company" />
-  <meta property="og:description" content="Schedule a free roof inspection with Invicta Roofing in El Paso, Texas." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://invictaroofs.com/contact/" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RoofingContractor",
-    "name": "Invicta Roofing",
-    "url": "https://invictaroofs.com/contact/",
-    "telephone": "+1-915-630-1349",
-    "email": "Support@invictaroofs.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "509 Giles Rd. Suite A",
-      "addressLocality": "El Paso",
-      "addressRegion": "TX",
-      "postalCode": "79915",
-      "addressCountry": "US"
+$schemaJson = <<<'JSON'
+{
+  "@context": "https://schema.org",
+  "@type": "RoofingContractor",
+  "name": "Invicta Roofing",
+  "url": "https://invictaroofs.com/contact/",
+  "telephone": "+1-915-630-1349",
+  "email": "Support@invictaroofs.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "509 Giles Rd. Suite A",
+    "addressLocality": "El Paso",
+    "addressRegion": "TX",
+    "postalCode": "79915",
+    "addressCountry": "US"
+  },
+  "areaServed": "El Paso, Texas",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
     },
-    "areaServed": "El Paso, Texas",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday", "Sunday"],
-        "opens": "08:00",
-        "closes": "12:00"
-      }
-    ]
-  }
-  </script>
-</head>
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "08:00",
+      "closes": "12:00"
+    }
+  ]
+}
+JSON;
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+include __DIR__ . '/../includes/header.php';
+?>
 
-  <header class="site-header" id="top">
-    <div class="announcement">
-      <span>Free roof inspections</span>
-      <span>Photo documentation</span>
-      <span>Insurance support</span>
-    </div>
-
-    <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="/" aria-label="Invicta Roofing home">
-        <img class="brand-logo" src="/images/logo_md_dark.svg" alt="Invicta Roofing" width="280" height="84" />
-      </a>
-
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="nav-menu" id="nav-menu">
-        <a href="/">Home</a>
-        <a href="../about/">About</a>
-        <a href="/#services">Services</a>
-        <a href="/#results">Results</a>
-        <a href="/#reviews">Reviews</a>
-        <a href="../contact/" class="is-active">Contact</a>
-      </div>
-
-      <a class="nav-call" href="tel:+19156301349">915-630-1349</a>
-    </nav>
-  </header>
-
-  <main id="main">
     <section class="contact-hero section-dark">
       <div class="container contact-hero-grid">
         <div class="contact-hero-copy reveal">
@@ -323,76 +276,5 @@ $detailFormRedirectAnchor = 'detailed-inspection-form';
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="footer section-dark">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand footer-brand" href="/" aria-label="Invicta Roofing home">
-          <img class="brand-logo footer-logo" src="../images/logo_md.png" alt="Invicta Roofing" width="280" height="84"
-            loading="lazy" />
-        </a>
-        <p>Undefeated roofing for El Paso homes. Family-approved. Built to be undefeated.</p>
-      </div>
-
-      <div>
-        <h2>Services</h2>
-        <a href="/roof-inspections/">Roof Inspections</a>
-        <a href="/roof-replacement/">Roof Replacements</a>
-        <a href="/roof-repair/">Roof Repairs</a>
-        <a href="/roof-coatings/">Roof Coatings</a>
-      </div>
-
-      <div>
-        <h2>Contact</h2>
-        <p>509 Giles Rd. Suite A<br />El Paso, TX 79915</p>
-        <a href="tel:+19156301349">915-630-1349</a>
-        <a href="mailto:Support@invictaroofs.com">Support@invictaroofs.com</a>
-      </div>
-
-      <div>
-        <h2>Hours</h2>
-        <p>Monday - Friday<br />8:00 AM - 5:00 PM</p>
-        <p>Saturday & Sunday<br />8:00 AM - 12:00 PM</p>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <span>© 2026 Invicta Roofing. All rights reserved.</span>
-      <a href="#main">Back to top</a>
-    </div>
-  </footer>
-
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
-
-    if (toggle && menu) {
-      toggle.addEventListener('click', () => {
-        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!isOpen));
-        menu.classList.toggle('is-open');
-      });
-
-      document.querySelectorAll('.nav-menu a').forEach((link) => {
-        link.addEventListener('click', () => {
-          toggle.setAttribute('aria-expanded', 'false');
-          menu.classList.remove('is-open');
-        });
-      });
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-  </script>
-</body>
-
-</html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

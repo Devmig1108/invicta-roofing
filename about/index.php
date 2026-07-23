@@ -2,106 +2,53 @@
 
 declare(strict_types=1);
 
-?>
-<!DOCTYPE html>
-<html lang="en">
+$basePath = '../';
+$currentPage = 'about';
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+$pageTitle = 'About Invicta Roofing | El Paso Roofing Company';
+$pageDescription = 'Learn about Invicta Roofing, a woman-led El Paso roofing company providing roof inspections, replacements, repairs, maintenance, coatings, and insurance support.';
+$pageKeywords = 'about Invicta Roofing, El Paso roofing company, woman-led roofing company El Paso, roof inspections El Paso, roof replacement El Paso';
+$canonicalUrl = 'https://invictaroofs.com/about/';
+$ogTitle = 'About Invicta Roofing | El Paso Roofing Company';
+$ogDescription = 'Invicta Roofing is a woman-led roofing company serving El Paso homeowners with honest inspections, clear recommendations, and roofing work built to last.';
+$ogUrl = 'https://invictaroofs.com/about/';
 
-    <title>About Invicta Roofing | El Paso Roofing Company</title>
-    <meta name="description"
-        content="Learn about Invicta Roofing, a woman-led El Paso roofing company providing roof inspections, replacements, repairs, maintenance, coatings, and insurance support." />
-    <link rel="canonical" href="https://invictaroofs.com/about/" />
-    <link rel="icon" type="image/png" href="/images/logo.png">
-
-    <meta property="og:title" content="About Invicta Roofing | El Paso Roofing Company" />
-    <meta property="og:description"
-        content="Invicta Roofing is a woman-led roofing company serving El Paso homeowners with honest inspections, clear recommendations, and roofing work built to last." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://invictaroofs.com/about/" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../styles.css" />
-
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About Invicta Roofing",
-    "url": "https://invictaroofs.com/about/",
-    "description": "Learn about Invicta Roofing, a woman-led roofing company serving El Paso homeowners.",
-    "mainEntity": {
-      "@type": "RoofingContractor",
-      "name": "Invicta Roofing",
-      "url": "https://invictaroofs.com/",
-      "telephone": "+1-915-630-1349",
-      "email": "Support@invictaroofs.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "509 Giles Rd. Suite A",
-        "addressLocality": "El Paso",
-        "addressRegion": "TX",
-        "postalCode": "79915",
-        "addressCountry": "US"
-      },
-      "areaServed": "El Paso, Texas"
-    }
+$schemaJson = <<<'JSON'
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Invicta Roofing",
+  "url": "https://invictaroofs.com/about/",
+  "description": "Learn about Invicta Roofing, a woman-led roofing company serving El Paso homeowners.",
+  "mainEntity": {
+    "@type": "RoofingContractor",
+    "name": "Invicta Roofing",
+    "url": "https://invictaroofs.com/",
+    "telephone": "+1-915-630-1349",
+    "email": "Support@invictaroofs.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "509 Giles Rd. Suite A",
+      "addressLocality": "El Paso",
+      "addressRegion": "TX",
+      "postalCode": "79915",
+      "addressCountry": "US"
+    },
+    "areaServed": "El Paso, Texas"
   }
-  </script>
-</head>
+}
+JSON;
 
-<body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header" id="top">
-        <div class="announcement">
-            <span>Free roof inspections</span>
-            <span>Photo documentation</span>
-            <span>Insurance support</span>
-        </div>
-
-        <nav class="nav container" aria-label="Primary navigation">
-            <a class="brand" href="/" aria-label="Invicta Roofing home">
-                <img class="brand-logo" src="../images/logo_md_dark.svg" alt="Invicta Roofing" width="280" height="84" />
-            </a>
-
-            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="nav-menu" id="nav-menu">
-                <a href="/">Home</a>
-                <a href="../about/" class="is-active">About</a>
-                <a href="/#services">Services</a>
-                <a href="/#results">Results</a>
-                <a href="/#reviews">Reviews</a>
-                <a href="../contact/">Contact</a>
-            </div>
-
-            <a class="nav-call" href="tel:+19156301349">915-630-1349</a>
-        </nav>
-    </header>
-
-    <main id="main">
+include __DIR__ . '/../includes/header.php';
+?>
         <section class="about-hero section-dark">
             <div class="container about-hero-grid">
                 <div class="about-hero-copy reveal">
                     <p class="eyebrow">About Invicta Roofing</p>
                     <h1>El Paso Roofing Company Built for Local Homes</h1>
                     <p>
-                    <p>
                         Invicta Roofing is a woman-led roofing company in El Paso, Texas, helping homeowners with roof
-                        inspections,
-                        roof replacements, repairs, coatings, and insurance-related roofing support.
-                    </p>
+                        inspections, roof replacements, repairs, coatings, and insurance-related roofing support.
                     </p>
 
                     <div class="hero-actions">
@@ -117,7 +64,7 @@ declare(strict_types=1);
                 </div>
 
                 <div class="about-hero-media reveal">
-                    <img src="../images/rooftop.jpg" alt="Invicta Roofing roof inspection work in El Paso" />
+                    <img src="<?= $basePath ?>images/rooftop.jpg" alt="Invicta Roofing roof inspection work in El Paso" />
                     <div class="about-media-card">
                         <span>Invicta Standard</span>
                         <strong>Clear answers before big decisions.</strong>
@@ -205,12 +152,10 @@ declare(strict_types=1);
 
                 <div class="about-belief-copy reveal">
                     <p class="eyebrow">What Invicta means</p>
-                    <h2>Unconquered is more than a name.</h2>
+                    <h2>Built to protect El Paso homes.</h2>
                     <p>
-                        Invicta means undefeated or unconquered. For homeowners, that means the roof should be more than
-                        a surface
-                        over the house. It should be part of the protection, stability, and peace of mind that makes a
-                        house feel secure.
+                        Invicta means undefeated. For homeowners, that idea is simple: your roof should protect the home,
+                        support long-term value, and give your family confidence through El Paso weather.
                     </p>
                     <p>
                         That standard shows up in the way Invicta inspects, communicates, documents, and completes
@@ -237,12 +182,12 @@ declare(strict_types=1);
                 <div class="credential-logos" aria-label="Invicta Roofing trust badges">
                     <div class="credential-logo credential-logo-gaf"
                         aria-label="GAF Certified Plus Residential Roofing Contractor">
-                        <img src="/images/Certified_Plus.png" alt="GAF Certified Plus Residential Roofing Contractor"
+                        <img src="<?= $basePath ?>images/Certified_Plus.png" alt="GAF Certified Plus Residential Roofing Contractor"
                             width="320" height="320" />
                     </div>
 
                     <div class="credential-logo credential-logo-nwir" aria-label="National Women in Roofing">
-                        <img src="/images/nwir.png" alt="National Women in Roofing" width="420" height="150" />
+                        <img src="<?= $basePath ?>images/nwir.png" alt="National Women in Roofing" width="420" height="150" />
                     </div>
 
                     <a class="credential-logo credential-logo-bbb"
@@ -253,7 +198,7 @@ declare(strict_types=1);
                     </a>
 
                     <div class="credential-logo credential-logo-gaf">
-                        <img src="/images/epcom.png" alt="El Paso Chamber or business affiliation badge" width="320"
+                        <img src="<?= $basePath ?>images/epcom.png" alt="El Paso Chamber or business affiliation badge" width="320"
                             height="320" />
                     </div>
                 </div>
@@ -348,77 +293,4 @@ declare(strict_types=1);
                 </div>
             </div>
         </section>
-    </main>
-
-    <footer class="footer section-dark">
-        <div class="container footer-grid">
-            <div>
-                <a class="brand footer-brand" href="/" aria-label="Invicta Roofing home">
-                    <img class="brand-logo footer-logo" src="/images/logo_md.png" alt="Invicta Roofing" width="280"
-                        height="84" loading="lazy" />
-                </a>
-                <p>Undefeated roofing for El Paso homes. Family-approved. Built to be undefeated.</p>
-            </div>
-
-            <div>
-                <h2>Services</h2>
-                <a href="/roof-inspections/">Roof Inspections</a>
-                <a href="/roof-replacement/">Roof Replacements</a>
-                <a href="/roof-repair/">Roof Repairs</a>
-                <a href="/roof-coatings/">Roof Coatings</a>
-                <a href="/roof-insurance-claims-assistance/">Insurance Claims Assistance</a>
-            </div>
-
-            <div>
-                <h2>Contact</h2>
-                <p>509 Giles Rd. Suite A<br />El Paso, TX 79915</p>
-                <a href="tel:+19156301349">915-630-1349</a>
-                <a href="mailto:Support@invictaroofs.com">Support@invictaroofs.com</a>
-            </div>
-
-            <div>
-                <h2>Hours</h2>
-                <p>Monday - Friday<br />8:00 AM - 5:00 PM</p>
-                <p>Saturday & Sunday<br />8:00 AM - 12:00 PM</p>
-            </div>
-        </div>
-
-        <div class="container footer-bottom">
-            <span>© 2026 Invicta Roofing. All rights reserved.</span>
-            <a href="#main">Back to top</a>
-        </div>
-    </footer>
-
-    <script>
-        const toggle = document.querySelector('.nav-toggle');
-        const menu = document.querySelector('.nav-menu');
-
-        if (toggle && menu) {
-            toggle.addEventListener('click', () => {
-                const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-                toggle.setAttribute('aria-expanded', String(!isOpen));
-                menu.classList.toggle('is-open');
-            });
-
-            document.querySelectorAll('.nav-menu a').forEach((link) => {
-                link.addEventListener('click', () => {
-                    toggle.setAttribute('aria-expanded', 'false');
-                    menu.classList.remove('is-open');
-                });
-            });
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12 });
-
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    </script>
-</body>
-
-</html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
