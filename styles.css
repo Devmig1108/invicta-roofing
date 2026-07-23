@@ -1832,7 +1832,8 @@ h3 {
 }
 
 .nav-menu a.is-active {
-  color: var(--accent, #ffffff);
+   background-color: var(--charcoal, #292329);
+  color: white;
 }
 
 .contact-hero {
@@ -2471,10 +2472,6 @@ h3 {
   align-items: start;
 }
 
-.nav-menu a.is-active {
-  color: var(--accent, #ffffff);
-}
-
 @media (max-width: 1100px) {
   .service-hero-copy h1 {
     font-size: clamp(3.2rem, 6vw, 5.8rem);
@@ -2613,10 +2610,6 @@ h3 {
   transform: translateX(-50%) translateY(0);
 }
 
-.nav-dropdown.is-active > .nav-dropdown-toggle,
-.nav-menu a.is-active {
-  color: var(--accent, #ffffff);
-}
 
 @media (max-width: 980px) {
   .nav-dropdown {
