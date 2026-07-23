@@ -97,9 +97,9 @@ $serviceClass = $isServicePage ? 'nav-dropdown is-active' : 'nav-dropdown';
           <div class="nav-dropdown-menu">
             <a href="<?= $basePath ?>roof-replacement/"<?= navActive('roof-replacement', $currentPage) ?>>Roof Replacement</a>
             <a href="<?= $basePath ?>roof-repair/"<?= navActive('roof-repair', $currentPage) ?>>Roof Repair</a>
-            <a href="<?= $basePath ?>roof-coatings/"<?= navActive('roof-coatings', $currentPage) ?>>Roof Coatings</a>
+            <!-- <a href="<?= $basePath ?>roof-coatings/"<?= navActive('roof-coatings', $currentPage) ?>>Roof Coatings</a>
             <a href="<?= $basePath ?>roof-inspections/"<?= navActive('roof-inspections', $currentPage) ?>>Roof Inspections</a>
-            <a href="<?= $basePath ?>roof-insurance-claims-assistance/"<?= navActive('roof-insurance-claims-assistance', $currentPage) ?>>Insurance Claims Assistance</a>
+            <a href="<?= $basePath ?>roof-insurance-claims-assistance/"<?= navActive('roof-insurance-claims-assistance', $currentPage) ?>>Insurance Claims Assistance</a> -->
           </div>
         </div>
 
