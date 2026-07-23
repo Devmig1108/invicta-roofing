@@ -2542,7 +2542,7 @@ h3 {
   position: relative;
   z-index: 2;
   min-width: 0;
-  max-width: 390px;
+  max-width: 600px;
   justify-self: end;
 }
 
@@ -2571,7 +2571,7 @@ h3 {
 
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 18px);
+  top: calc(100%);
   left: 50%;
   transform: translateX(-50%) translateY(8px);
   min-width: 270px;
