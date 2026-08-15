@@ -606,6 +606,239 @@ h3 {
   min-height: 520px;
 }
 
+.quince-promo {
+  padding: 72px 0;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f5f6f7 100%);
+  overflow: hidden;
+}
+
+.quince-promo-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(340px, 0.9fr) minmax(0, 1fr);
+  min-height: 360px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 28px 80px rgba(17, 24, 39, 0.16);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.quince-promo-card::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 47, 146, 0.18);
+  border-radius: 22px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.quince-promo-media {
+  position: relative;
+  min-height: 360px;
+  background: #4f5962;
+  overflow: hidden;
+}
+
+.quince-promo-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(79, 89, 98, 0.55), rgba(79, 89, 98, 0.08)),
+    radial-gradient(circle at 25% 25%, rgba(255, 47, 146, 0.28), transparent 32%);
+  z-index: 1;
+}
+
+.quince-promo-media::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 34%;
+  height: 100%;
+  background: #ffffff;
+  clip-path: polygon(58% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 2;
+}
+
+.quince-promo-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+}
+
+.quince-promo-image-label {
+  position: absolute;
+  left: 26px;
+  bottom: 26px;
+  z-index: 4;
+  max-width: 230px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.quince-promo-image-label span {
+  display: block;
+  color: #ff2f92;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.4rem;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.quince-promo-image-label strong {
+  display: block;
+  color: #111827;
+  font-size: 0.85rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.quince-promo-content {
+  position: relative;
+  z-index: 4;
+  padding: clamp(34px, 5vw, 58px);
+  align-self: center;
+}
+
+.quince-promo-content .eyebrow {
+  margin-bottom: 14px;
+}
+
+.quince-promo-content h2 {
+  max-width: 620px;
+  margin: 0 0 18px;
+  color: #111827;
+  font-size: clamp(3.3rem, 6vw, 5.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+
+.quince-promo-content h2 span {
+  color: #ff2f92;
+}
+
+.quince-promo-content p {
+  max-width: 620px;
+  margin: 0;
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.quince-promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.quince-promo-content small {
+  display: block;
+  margin-top: 16px;
+  color: #6b7280;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 24, 39, 0.22);
+  background: transparent;
+  color: #111827;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.btn-outline-dark:hover {
+  transform: translateY(-2px);
+  background: #111827;
+  border-color: #111827;
+  color: #ffffff;
+}
+
+@media (max-width: 980px) {
+  .quince-promo-card {
+    grid-template-columns: 1fr;
+  }
+
+  .quince-promo-media::after {
+    top: auto;
+    right: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 28%;
+    clip-path: polygon(0 55%, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .quince-promo-media,
+  .quince-promo-media img {
+    min-height: 300px;
+  }
+
+  .quince-promo-content h2 {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 640px) {
+  .quince-promo {
+    padding: 48px 0;
+  }
+
+  .quince-promo-card {
+    border-radius: 24px;
+  }
+
+  .quince-promo-card::before {
+    inset: 12px;
+    border-radius: 18px;
+  }
+
+  .quince-promo-media,
+  .quince-promo-media img {
+    min-height: 250px;
+  }
+
+  .quince-promo-image-label {
+    left: 18px;
+    bottom: 18px;
+    padding: 14px 16px;
+  }
+
+  .quince-promo-content {
+    padding: 30px 22px;
+  }
+
+  .quince-promo-content h2 {
+    font-size: clamp(3rem, 12vw, 4.4rem);
+  }
+
+  .quince-promo-actions {
+    flex-direction: column;
+  }
+
+  .quince-promo-actions .btn,
+  .quince-promo-actions .btn-outline-dark {
+    width: 100%;
+  }
+}
+
 .roof-panel {
   position: absolute;
   inset: 20px 40px 40px 0;
@@ -1832,7 +2065,7 @@ h3 {
 }
 
 .nav-menu a.is-active {
-   background-color: var(--charcoal, #292329);
+  background-color: var(--charcoal, #292329);
   color: white;
 }
 
@@ -2479,6 +2712,7 @@ h3 {
 }
 
 @media (max-width: 980px) {
+
   .service-hero-grid,
   .service-intro-grid,
   .service-split-grid,
@@ -2685,6 +2919,7 @@ h3 {
     line-height: 0.92;
   }
 }
+
 @media (max-width: 980px) {
 
   .about-hero-grid,
