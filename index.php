@@ -338,7 +338,7 @@ include $basePath . 'includes/header.php';
 
         <div class="quince-promo-actions">
           <a class="btn btn-primary" href="#inspection">Schedule Free Inspection</a>
-          <a class="btn btn-outline-dark" href="/roofingquincepromo">
+          <a class="btn btn-outline-dark" href="roofingquincepromo">
             View Giveaway Details
           </a>
         </div>
