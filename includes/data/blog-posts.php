@@ -8,7 +8,7 @@ return [
         'description' => 'El Paso weather can bring heat, UV exposure, wind, dust, and sudden rain. Learn what homeowners should know about roof inspections, storm damage, and insurance-related roof questions.',
         'date' => '2026-09-28',
         'category' => 'Roof Inspections',
-        'image' => '../images/blog/el-paso-weather-changing-roof.jpg',
+        'image' => '../images/blog/el-paso-weather-changing-roof.jpeg',
     ],
 
     /*
