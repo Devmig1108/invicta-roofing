@@ -54,209 +54,176 @@ $schemaJson = json_encode([
 include $rootPath . '/includes/header.php';
 ?>
 
-<section class="blog-post-hero section-dark">
-  <div class="container blog-post-hero-grid">
-    <div class="blog-post-hero-copy reveal">
+<section class="blog-article-hero section-dark">
+  <div class="container">
+    <div class="blog-article-hero-inner reveal">
       <a class="blog-back-link" href="<?= $basePath ?>blog/">← Back to Blog</a>
 
-      <p class="eyebrow">Roof Inspections</p>
+      <div class="blog-article-meta">
+        <span>Roof Inspections</span>
+        <time datetime="2026-09-28">September 28, 2026</time>
+      </div>
+
       <h1>Is El Paso Weather Changing? What Homeowners Should Know About Their Roof</h1>
 
       <p>
         Why is it raining so much in El Paso? Can all this rain damage your roof?
         And when does roof damage become an insurance issue?
       </p>
-
-      <div class="blog-post-meta">
-        <span>Invicta Roofing</span>
-        <time datetime="2026-09-28">September 28, 2026</time>
-      </div>
-    </div>
-
-    <div class="blog-post-hero-image reveal">
-      <img
-        src="<?= $basePath ?>images/blog/el-paso-weather-changing-roof.jpg"
-        alt="Roof in El Paso weather conditions"
-        loading="lazy"
-      />
     </div>
   </div>
 </section>
 
-<section class="section blog-post-section">
-  <div class="container blog-post-layout">
-    <article class="blog-post-content reveal">
-      <p>
-        If you’ve lived in El Paso long enough, you’ve probably said some version of:
-      </p>
+<section class="blog-article-wrap">
+  <div class="container">
+    <article class="blog-article">
+      <figure class="blog-featured-image reveal">
+        <img
+          src="<?= $basePath ?>images/blog/el-paso-weather-changing-roof.jpeg"
+          alt="Roof in El Paso weather conditions"
+          loading="lazy"
+        />
+      </figure>
 
-      <p>
-        <strong>“Since when does it rain this much here?”</strong>
-      </p>
-
-      <p>
-        El Paso is still a desert. According to the National Weather Service, our normal annual rainfall is only about
-        <a href="https://www.weather.gov/epz/elpaso_extreme_weather" target="_blank" rel="noopener">8.78 inches</a>.
-        But our climate isn’t static. The latest 30-year climate normals show El Paso’s average annual temperature increased
-        by about 1.6°F compared with the previous period.
-        <a href="https://www.weather.gov/epz/epz_area_climate" target="_blank" rel="noopener">Source: National Weather Service</a>
-      </p>
-
-      <p>
-        For homeowners, the bigger question isn’t whether El Paso is becoming Dallas.
-      </p>
-
-      <p>
-        It’s this:
-      </p>
-
-      <h2>What is our weather doing to your roof?</h2>
-
-      <p>
-        Your roof lives through extreme heat, UV exposure, wind, dust and sudden rain.
-      </p>
-
-      <p>
-        Over time, heat and normal aging can deteriorate roofing materials. Then a strong wind or rain event can expose
-        weaknesses that may have already been developing.
-      </p>
-
-      <p>
-        A stain on your ceiling doesn’t automatically mean you need a new roof.
-      </p>
-
-      <p>
-        A missing shingle doesn’t automatically mean you have an insurance claim.
-      </p>
-
-      <p>
-        And an old roof doesn’t automatically mean your insurance company owes you a new one.
-      </p>
-
-      <p>
-        <strong>You need to know what caused the damage.</strong>
-      </p>
-
-      <h2>Does Homeowners Insurance Cover Roof Damage in El Paso?</h2>
-
-      <p>
-        Sometimes.
-      </p>
-
-      <p>
-        The Texas Department of Insurance explains that homeowners insurance can cover roof damage caused by events such
-        as storms, wind and hail, depending on the coverage in your policy. What insurance generally doesn’t cover is a roof
-        that simply deteriorated because of age or normal wear and tear.
-        <a href="https://www.tdi.texas.gov/column/what-to-know-about-replacing-your-roof-with-insurance.html" target="_blank" rel="noopener">Source: Texas Department of Insurance</a>
-      </p>
-
-      <p>
-        That’s an important distinction for El Paso homeowners.
-      </p>
-
-      <p>
-        We’re not a traditional hail market where homeowners have been conditioned to inspect their roofs after every major storm.
-        Many of us simply don’t think about the roof until we see water coming through the ceiling.
-      </p>
-
-      <p>
-        By then, the conversation can become much more complicated.
-      </p>
-
-      <h2>Don’t Wait for the Leak</h2>
-
-      <p>
-        After significant wind, hail or rain, look around your property.
-      </p>
-
-      <p>
-        Missing or lifted shingles, displaced tiles, damaged flashing, water stains, ceiling discoloration and new leaks are
-        all reasons to have the roof inspected.
-      </p>
-
-      <p>
-        The Texas Department of Insurance recommends checking for damaged or missing shingles after storms and documenting
-        storm damage with photos or video when appropriate.
-        <a href="https://www.tdi.texas.gov/tips/replacing-your-roof.html" target="_blank" rel="noopener">Source: Texas Department of Insurance</a>
-      </p>
-
-      <h2>Sometimes It’s Insurance. Sometimes It’s Maintenance.</h2>
-
-      <p>
-        This is where Invicta Roofing takes a different approach.
-      </p>
-
-      <p>
-        We’re not here to tell every El Paso homeowner to file an insurance claim.
-      </p>
-
-      <p>
-        <strong>We’re here to figure out what happened.</strong>
-      </p>
-
-      <p>
-        Sometimes we find legitimate storm damage that should be properly documented.
-      </p>
-
-      <p>
-        Sometimes we find a maintenance issue that can be addressed before it becomes a much bigger problem.
-      </p>
-
-      <p>
-        And sometimes?
-      </p>
-
-      <p>
-        <strong>Your roof is fine.</strong>
-      </p>
-
-      <p>
-        That’s good news, too.
-      </p>
-
-      <p>
-        El Paso homeowners already spend thousands of dollars protecting their homes. It’s time we become just as educated
-        about the roof protecting everything underneath it.
-      </p>
-
-      <p>
-        <strong>The weather may be changing. Your relationship with your roof should, too.</strong>
-      </p>
-
-      <div class="blog-inline-cta">
-        <h3>Not sure what the last storm did to your roof?</h3>
-        <p>
-          Let Invicta Roofing take a look. Start with a free roof inspection and get clear answers before the problem gets bigger.
+      <div class="blog-article-content reveal">
+        <p class="article-lead">
+          If you’ve lived in El Paso long enough, you’ve probably said some version of:
+          <strong>“Since when does it rain this much here?”</strong>
         </p>
-        <a class="btn btn-primary" href="<?= $basePath ?>contact/">Schedule Free Inspection</a>
+
+        <p>
+          El Paso is still a desert. According to the National Weather Service, our normal annual rainfall is only about
+          <a href="https://www.weather.gov/epz/elpaso_extreme_weather" target="_blank" rel="noopener">8.78 inches</a>.
+          But our climate isn’t static. The latest 30-year climate normals show El Paso’s average annual temperature increased
+          by about 1.6°F compared with the previous period.
+          <a href="https://www.weather.gov/epz/epz_area_climate" target="_blank" rel="noopener">Source: National Weather Service</a>
+        </p>
+
+        <p>
+          For homeowners, the bigger question isn’t whether El Paso is becoming Dallas. It’s this:
+          <strong>what is our weather doing to your roof?</strong>
+        </p>
+
+        <div class="blog-takeaway">
+          <span>The short version</span>
+          <p>
+            El Paso roofs deal with extreme heat, UV exposure, wind, dust, and sudden rain. Sometimes roof damage is storm-related.
+            Sometimes it is maintenance. Sometimes the roof is fine. The important thing is knowing what caused the issue.
+          </p>
+        </div>
+
+        <h2>What El Paso weather can do to your roof</h2>
+
+        <p>
+          Your roof lives through extreme heat, UV exposure, wind, dust and sudden rain. Over time, heat and normal aging can
+          deteriorate roofing materials. Then a strong wind or rain event can expose weaknesses that may have already been
+          developing.
+        </p>
+
+        <p>
+          A stain on your ceiling doesn’t automatically mean you need a new roof. A missing shingle doesn’t automatically mean
+          you have an insurance claim. And an old roof doesn’t automatically mean your insurance company owes you a new one.
+          <strong>You need to know what caused the damage.</strong>
+        </p>
+
+        <h2>When roof damage becomes an insurance question</h2>
+
+        <p>
+          Sometimes homeowners insurance can apply. The Texas Department of Insurance explains that homeowners insurance can
+          cover roof damage caused by events such as storms, wind and hail, depending on the coverage in your policy.
+          What insurance generally doesn’t cover is a roof that simply deteriorated because of age or normal wear and tear.
+          <a href="https://www.tdi.texas.gov/column/what-to-know-about-replacing-your-roof-with-insurance.html" target="_blank" rel="noopener">Source: Texas Department of Insurance</a>
+        </p>
+
+        <p>
+          That’s an important distinction for El Paso homeowners. We’re not a traditional hail market where homeowners have been
+          conditioned to inspect their roofs after every major storm. Many of us simply don’t think about the roof until we see
+          water coming through the ceiling. By then, the conversation can become much more complicated.
+        </p>
+
+        <h2>Don’t wait for the leak</h2>
+
+        <p>
+          After significant wind, hail or rain, look around your property. Missing or lifted shingles, displaced tiles,
+          damaged flashing, water stains, ceiling discoloration and new leaks are all reasons to have the roof inspected.
+        </p>
+
+        <p>
+          The Texas Department of Insurance recommends checking for damaged or missing shingles after storms and documenting
+          storm damage with photos or video when appropriate.
+          <a href="https://www.tdi.texas.gov/tips/replacing-your-roof.html" target="_blank" rel="noopener">Source: Texas Department of Insurance</a>
+        </p>
+
+        <h2>Sometimes it’s insurance. Sometimes it’s maintenance.</h2>
+
+        <p>
+          This is where Invicta Roofing takes a different approach. We’re not here to tell every El Paso homeowner to file an
+          insurance claim. <strong>We’re here to figure out what happened.</strong>
+        </p>
+
+        <p>
+          Sometimes we find legitimate storm damage that should be properly documented. Sometimes we find a maintenance issue
+          that can be addressed before it becomes a much bigger problem. And sometimes? <strong>Your roof is fine.</strong>
+          That’s good news, too.
+        </p>
+
+        <p>
+          El Paso homeowners already spend thousands of dollars protecting their homes. It’s time we become just as educated
+          about the roof protecting everything underneath it.
+          <strong>The weather may be changing. Your relationship with your roof should, too.</strong>
+        </p>
+
+        <div class="blog-final-cta">
+          <p class="eyebrow">Not sure what the last storm did to your roof?</p>
+          <h2>Let Invicta Roofing take a look.</h2>
+          <p>
+            Start with a free roof inspection and get clear answers before the problem gets bigger.
+          </p>
+
+          <div class="blog-final-actions">
+            <a class="btn btn-primary" href="<?= $basePath ?>contact/">Schedule Free Inspection</a>
+            <a class="btn btn-secondary" href="tel:+19156301349">Call 915-630-1349</a>
+          </div>
+        </div>
+
+        <p class="blog-signoff">
+          <strong>Be Protected. Be Invicta.</strong>
+        </p>
       </div>
     </article>
 
-    <aside class="blog-post-sidebar reveal" aria-label="Blog sidebar">
-      <div class="sidebar-card">
-        <h2>Need a roof inspection?</h2>
-        <p>
-          Invicta Roofing can inspect your roof, document visible concerns, and help you understand your next step.
-        </p>
-        <a class="btn btn-dark btn-full" href="<?= $basePath ?>contact/">Schedule Free Inspection</a>
+    <section class="blog-related-services reveal" aria-label="Related roofing services">
+      <div class="blog-related-heading">
+        <p class="eyebrow">Related services</p>
+        <h2>Need help with your roof?</h2>
       </div>
 
-      <div class="sidebar-card">
-        <h2>Related services</h2>
-        <a href="<?= $basePath ?>roof-inspections/">Roof Inspections</a>
-        <a href="<?= $basePath ?>roof-repair/">Roof Repair</a>
-        <a href="<?= $basePath ?>roof-replacement/">Roof Replacement</a>
-        <a href="<?= $basePath ?>roof-insurance-claims-assistance/">Insurance Claims Assistance</a>
-      </div>
+      <div class="blog-related-grid">
+        <a href="<?= $basePath ?>roof-inspections/">
+          <span>01</span>
+          <strong>Roof Inspections</strong>
+          <small>Start with a clear roof evaluation.</small>
+        </a>
 
-      <div class="sidebar-card">
-        <h2>Contact Invicta</h2>
-        <p>
-          915-630-1349<br>
-          Support@invictaroofs.com
-        </p>
+        <a href="<?= $basePath ?>roof-repair/">
+          <span>02</span>
+          <strong>Roof Repair</strong>
+          <small>Target leaks, damage, and problem areas.</small>
+        </a>
+
+        <a href="<?= $basePath ?>roof-replacement/">
+          <span>03</span>
+          <strong>Roof Replacement</strong>
+          <small>Replace aging roofs with long-term protection.</small>
+        </a>
+
+        <a href="<?= $basePath ?>roof-insurance-claims-assistance/">
+          <span>04</span>
+          <strong>Insurance Claim Support</strong>
+          <small>Document visible concerns and next steps.</small>
+        </a>
       </div>
-    </aside>
+    </section>
   </div>
 </section>
 
