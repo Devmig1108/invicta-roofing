@@ -3287,12 +3287,12 @@ h3 {
 }
 
 .blog-article-content h2 {
-  margin-top: 56px;
-  margin-bottom: 18px;
-  color: #252b33;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  line-height: 1.02;
-  letter-spacing: -0.045em;
+      margin-top: 56px;
+    margin-bottom: 18px;
+    color: #4b4a4a;
+    font-size: clamp(1.2rem, 2vw, 2.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
 }
 
 .blog-article-content h3 {
