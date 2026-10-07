@@ -14,7 +14,7 @@ $canonicalUrl = 'https://invictaroofs.com/blog/el-paso-weather-changing-roof/';
 $ogTitle = 'Is El Paso Weather Changing? What Homeowners Should Know About Their Roof';
 $ogDescription = $pageDescription;
 $ogUrl = $canonicalUrl;
-$ogImage = 'https://invictaroofs.com/images/blog/el-paso-weather-changing-roof.jpg';
+$ogImage = 'https://invictaroofs.com/images/blog/el-paso-weather-changing-roof.jpeg';
 
 $publishedDate = '2026-09-28';
 $modifiedDate = '2026-09-28';
