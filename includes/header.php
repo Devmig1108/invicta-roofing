@@ -105,6 +105,7 @@ $serviceClass = $isServicePage ? 'nav-dropdown is-active' : 'nav-dropdown';
 
         <a href="<?= $basePath ?>roofingquincepromo/quinceanera-giveaway.php"<?= navActive('giveaway', $currentPage) ?>>Giveaway</a>
         <a href="<?= $basePath ?>contact/"<?= navActive('contact', $currentPage) ?>>Contact</a>
+        <a href="<?= $basePath ?>blog/"<?= navActive('blog', $currentPage) ?>>Blogs</a>
       </div>
 
       <a class="nav-call" href="tel:+19156301349">915-630-1349</a>
