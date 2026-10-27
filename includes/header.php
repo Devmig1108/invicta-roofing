@@ -103,7 +103,7 @@ $serviceClass = $isServicePage ? 'nav-dropdown is-active' : 'nav-dropdown';
           </div>
         </div>
 
-        <a href="<?= $basePath ?>roofingquincepromo/quinceanera-giveaway.php"<?= navActive('giveaway', $currentPage) ?>>Giveaway</a>
+        <a href="<?= $basePath ?>roofingquincepromo/"<?= navActive('giveaway', $currentPage) ?>>Giveaway</a>
         <a href="<?= $basePath ?>contact/"<?= navActive('contact', $currentPage) ?>>Contact</a>
         <a href="<?= $basePath ?>blog/"<?= navActive('blog', $currentPage) ?>>Blogs</a>
       </div>
