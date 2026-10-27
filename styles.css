@@ -3454,6 +3454,47 @@ h3 {
   line-height: 1.5;
 }
 
+/* Award article image treatment
+   Append once to the end of the existing blog CSS section in /styles.css.
+   Both award articles reuse the SAME blog article classes and layout.
+   These rules only keep the portrait award images fully visible. */
+.blog-featured-image.blog-award-featured {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f6f4f1;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.blog-featured-image.blog-award-featured img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 540px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.blog-featured-image.blog-award-featured figcaption {
+  align-self: stretch;
+  padding: 12px 18px;
+  color: #6b7280;
+  background: #ffffff;
+  font-size: 0.83rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .blog-featured-image.blog-award-featured img {
+    max-height: 400px;
+  }
+}
+
+
 /* Active nav */
 .nav-menu a.is-active,
 .nav-dropdown.is-active > .nav-dropdown-toggle {
