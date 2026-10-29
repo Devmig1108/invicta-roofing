@@ -9,3 +9,46 @@
 @media(max-width:850px){.hero-inner{grid-template-columns:1fr 320px;gap:35px;min-height:560px;padding-top:62px}.photo-placeholder{height:315px}.hero h1{font-size:70px}.form-layout{gap:40px}.form-card{padding:30px 26px}.trust-inner{grid-template-columns:45px 1fr 90px;gap:17px}}
 @media(max-width:650px){.site-header{height:68px;padding:0 20px}.brand-mark{width:30px;height:30px}.brand-name{font-size:17px}.header-call span{font-size:8px}.header-call strong{font-size:13px}.hero-inner{grid-template-columns:1fr;gap:38px;padding:55px 22px 42px}.hero-copy{max-width:none}.hero h1{font-size:clamp(59px,16vw,82px)}.hero-intro{font-size:14px}.player-card{width:min(100%,380px);margin:0 auto;transform:rotate(.5deg)}.photo-placeholder{height:330px}.hero-footer{justify-content:space-between;gap:10px;padding:14px 16px;font-size:7px;letter-spacing:.09em}.trust-inner{padding:52px 23px;grid-template-columns:32px 1fr;gap:13px}.trust-mark{font-size:72px}.trust-copy h2{font-size:36px}.quote-placeholder{font-size:14px}.trust-aside{display:none}.form-section{padding:62px 18px}.form-layout{grid-template-columns:1fr;gap:32px}.form-intro{padding:0 4px}.form-intro h2{font-size:57px}.form-benefits{margin:20px 0;padding:19px 0}.form-card{padding:27px 20px}.form-card-heading h3{font-size:26px}.field-grid{grid-template-columns:1fr;gap:16px}.site-footer{gap:15px 22px;padding:27px 18px}.site-footer p{width:calc(100% - 70px);text-align:right}.site-footer>small{width:100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Refined type scale: slightly larger reading text and clearer small labels. */
+.eyebrow{font-size:11px}
+.header-call span{font-size:11px}
+.draft-label{font-size:13px}
+.hero-intro{font-size:18px}
+.button{font-size:13px}
+.hero-proof{font-size:12px}
+.card-topline{font-size:10px}
+.card-season{font-size:9px}
+.placeholder-frame{font-size:11px}
+.placeholder-frame small{font-size:10px}
+.card-kicker{font-size:9px}
+.hero-footer{font-size:9px}
+.trust-copy h2{font-size:45px}
+.quote-placeholder{font-size:17px}
+.signature{font-size:15px}
+.signature small{font-size:10px}
+.trust-aside{font-size:9px}
+.form-intro h2{font-size:clamp(50px,5.2vw,72px)}
+.form-intro>p:not(.eyebrow){font-size:16px}
+.form-benefits li{font-size:12px}
+.phone-note span{font-size:10px}
+.form-step,.form-badge{font-size:10px}
+.form-card-heading h3{font-size:31px}
+.lead-form label{font-size:11px}
+.lead-form input,.lead-form select,.lead-form textarea{font-size:15px;min-height:48px}
+.optional{font-size:10px}
+.privacy-note{font-size:10px}
+.form-notice{font-size:13px}
+.site-footer p{font-size:12px}
+.site-footer>small{font-size:10px}
+
+@media(max-width:850px){.trust-copy h2{font-size:42px}}
+@media(max-width:650px){
+  .header-call span{font-size:9px}
+  .hero-intro{font-size:16px}
+  .hero-footer{font-size:8px}
+  .trust-copy h2{font-size:38px}
+  .quote-placeholder{font-size:15px}
+  .form-intro h2{font-size:61px}
+  .form-card-heading h3{font-size:28px}
+}
