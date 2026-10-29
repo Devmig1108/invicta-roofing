@@ -35,8 +35,7 @@ $pageUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'invictaroofs.com') . strtok($
 <body>
   <header class="site-header">
     <a class="brand" href="https://invictaroofs.com/" aria-label="Invicta Roofing home">
-      <span class="brand-mark" aria-hidden="true">I</span>
-      <span class="brand-name">INVICTA <small>ROOFING</small></span>
+      <img class="brand-logo" src="/images/logo.png" alt="Invicta Roofing">
     </a>
     <a class="header-call" href="tel:+19156301349"><span>Talk to our team</span><strong>915-630-1349</strong></a>
   </header>
@@ -141,7 +140,7 @@ $pageUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'invictaroofs.com') . strtok($
   </main>
 
   <footer class="site-footer">
-    <a class="brand brand-footer" href="https://invictaroofs.com/" aria-label="Invicta Roofing home"><span class="brand-mark" aria-hidden="true">I</span><span class="brand-name">INVICTA <small>ROOFING</small></span></a>
+    <a class="brand brand-footer" href="https://invictaroofs.com/" aria-label="Invicta Roofing home"><img class="brand-logo" src="/images/logo.png" alt="Invicta Roofing"></a>
     <p>Be protected. Be Invicta.</p>
     <a href="tel:+19156301349">915-630-1349</a>
     <small>© <?= date('Y') ?> Invicta Roofing · El Paso, Texas</small>
