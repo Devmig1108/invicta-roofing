@@ -945,15 +945,15 @@ a {
 }
 
 .form-intro>p:not(.eyebrow) {
-  font-size: 16px
+  font-size: 18px
 }
 
 .form-benefits li {
-  font-size: 12px
+  font-size: 16px
 }
 
 .phone-note span {
-  font-size: 10px
+  font-size: 12px
 }
 
 .form-step,
