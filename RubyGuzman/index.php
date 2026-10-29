@@ -38,7 +38,7 @@ $pageUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'invictaroofs.com') . strtok($
       <img class="brand-logo" src="/images/logo.png" alt="Invicta Roofing">
     </a>
     <div class="header-actions">
-      <button class="language-toggle" type="button" id="language-toggle" aria-label="Cambiar a español" aria-pressed="false">ES</button>
+      <button class="language-toggle" type="button" id="language-toggle" aria-label="Cambiar a español" aria-pressed="false">ESPAÑOL</button>
       <a class="header-call" href="tel:+19156301349"><span data-i18n="talk_to_team">Talk to our team</span><strong>915-630-1349</strong></a>
     </div>
   </header>
@@ -221,7 +221,7 @@ $pageUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'invictaroofs.com') . strtok($
         const value = copy[element.dataset.i18nAlt];
         if (value !== undefined) element.alt = value;
       });
-      languageButton.textContent = language === 'en' ? 'ES' : 'EN';
+      languageButton.textContent = language === 'en' ? 'ESPAÑOL' : 'ENGLISH';
       languageButton.setAttribute('aria-label', language === 'en' ? 'Cambiar a español' : 'Switch to English');
       languageButton.setAttribute('aria-pressed', language === 'es' ? 'true' : 'false');
       document.title = language === 'en' ? 'Ruby Guzman | Team Invicta' : 'Ruby Guzman | Equipo Invicta';
