@@ -108,7 +108,7 @@ function rubySendEmail(array $lead): bool
     // The default below matches the address supplied for this page.
     $recipient = defined('AMBASSADOR_FORM_RECIPIENT')
         ? (string) AMBASSADOR_FORM_RECIPIENT
-        : 'ervotech.ep@gmail.com';
+        : 'support@invictraroofs.com';
 
     $rows = '';
     foreach ([
