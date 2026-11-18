@@ -22,14 +22,14 @@ $notice = match ($status) {
 $pageUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'invictaroofs.com') . strtok($_SERVER['REQUEST_URI'] ?? '/RubyGuzman/', '?');
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#22272d">
-  <title>Ruby Guzman | Team Invicta</title>
-  <meta name="description" content="Connect with Invicta Roofing through Ruby Guzman's Team Invicta page and request a roof inspection.">
+  <title>Ruby Guzman | Equipo Invicta</title>
+  <meta name="description" content="Comunícate con Invicta Roofing a través de la página de Ruby Guzman y solicita una inspección de techo.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,7 +38,7 @@ $pageUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'invictaroofs.com') . strtok($
       <img class="brand-logo" src="/images/logo.png" alt="Invicta Roofing">
     </a>
     <div class="header-actions">
-      <button class="language-toggle" type="button" id="language-toggle" aria-label="Cambiar a español" aria-pressed="false">ESPAÑOL</button>
+      <button class="language-toggle" type="button" id="language-toggle" aria-label="Cambiar a inglés" aria-pressed="true">ENGLISH</button>
       <a class="header-call" href="tel:+19156301349"><span data-i18n="talk_to_team">Talk to our team</span><strong>915-630-1349</strong></a>
     </div>
   </header>
@@ -233,8 +233,8 @@ $pageUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'invictaroofs.com') . strtok($
     languageButton.addEventListener('click', () => {
       setPageLanguage(document.documentElement.lang === 'en' ? 'es' : 'en');
     });
-    let savedLanguage = 'en';
-    try { savedLanguage = localStorage.getItem('rubyPageLanguage') === 'es' ? 'es' : 'en'; } catch (error) {}
+    let savedLanguage = 'es';
+    try { savedLanguage = localStorage.getItem('rubyPageLanguage') === 'en' ? 'en' : 'es'; } catch (error) {}
     setPageLanguage(savedLanguage);
   </script>
 </body>
