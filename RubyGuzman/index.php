@@ -29,6 +29,7 @@ $pageUrl = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'invictaroofs.com') . strtok($
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#22272d">
+    <link rel="icon" type="image/png" href="<?= $basePath ?>images/logo.png">
   <title>Ruby Guzman | Equipo Invicta</title>
   <meta name="description"
     content="Comunícate con Invicta Roofing a través de la página de Ruby Guzman y solicita una inspección de techo.">
