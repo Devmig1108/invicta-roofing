@@ -7,14 +7,16 @@ function verifyInvictaTurnstile(string $expectedAction): bool
     $token = $_POST['cf-turnstile-response'] ?? null;
 
     error_log(
-    '[Invicta Turnstile] Secret ' .
-    ((defined('TURNSTILE_SECRET_KEY') && TURNSTILE_SECRET_KEY !== '')
-        ? 'configured'
-        : 'MISSING')
-);
+        '[Invicta Turnstile] Secret ' .
+        ((defined('TURNSTILE_SECRET_KEY') && TURNSTILE_SECRET_KEY !== '')
+            ? 'configured'
+            : 'MISSING')
+    );
 
-    if (!is_string($token) || $token === '' || strlen($token) > 2048
-        || TURNSTILE_SECRET_KEY === '' || !function_exists('curl_init')) {
+    if (
+        !is_string($token) || $token === '' || strlen($token) > 2048
+        || TURNSTILE_SECRET_KEY === '' || !function_exists('curl_init')
+    ) {
         return false;
     }
 
