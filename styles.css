@@ -197,7 +197,7 @@ textarea {
 
 .hero {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   padding: 94px 0 86px;
   background:
     radial-gradient(circle at 22% 18%, rgba(237, 27, 114, 0.22), transparent 30%),
