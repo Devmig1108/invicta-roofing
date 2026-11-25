@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 require_once dirname(__DIR__) . '/config/secure_env.php';
+require_once __DIR__ . '/turnstile.php';
 
 function processHomeForm(string $formKind): void
 {
@@ -53,6 +54,10 @@ function processHomeForm(string $formKind): void
         ]);
 
         redirectHomeForm($formKind, 'error', $submission['errors'][0]);
+    }
+
+    if (TURNSTILE_ENABLED && !verifyInvictaTurnstile('home-' . $formKind)) {
+        redirectHomeForm($formKind, 'error', 'turnstile_failed');
     }
 
     $deliveryMode = defined('FORM_DELIVERY_MODE') ? FORM_DELIVERY_MODE : 'log';

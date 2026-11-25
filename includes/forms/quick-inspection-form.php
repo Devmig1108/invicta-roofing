@@ -36,6 +36,11 @@
     </select>
   </label>
 
+  <?php if (TURNSTILE_ENABLED && TURNSTILE_SITE_KEY !== ''): ?>
+    <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars(TURNSTILE_SITE_KEY, ENT_QUOTES, 'UTF-8') ?>"
+      data-action="home-quick"></div>
+  <?php endif; ?>
+
   <button class="btn btn-primary btn-full" type="submit">Request My Inspection</button>
   <p class="form-note">No spam. No pressure. Just a clear roofing recommendation.</p>
 </form>

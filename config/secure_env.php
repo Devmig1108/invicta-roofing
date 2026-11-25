@@ -16,9 +16,10 @@ define('FORM_RATE_LIMIT_MAX_SUBMISSIONS', 3);
 /**
  * Keep this false until Turnstile is configured for the live/demo domain.
  */
-define('TURNSTILE_ENABLED', false);
-define('TURNSTILE_SITE_KEY', '');
-define('TURNSTILE_SECRET_KEY', '');
+define('TURNSTILE_ENABLED', true);
+define('TURNSTILE_SITE_KEY', '0x4AAAAAAGS264HOB0PaYSJX');
+define('TURNSTILE_SECRET_KEY', getenv('0x4AAAAAAGS266EuS43vlP7MZO_1N_6WnPk') ?: '');
+define('TURNSTILE_ALLOWED_HOSTNAMES', ['invictaroofs.com', 'www.invictaroofs.com']);
 
 /**
  * ZeptoMail testing.

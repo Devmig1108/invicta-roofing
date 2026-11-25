@@ -5,6 +5,7 @@ declare(strict_types=1);
 // Secrets stay in the site's existing secure configuration file.
 $siteRoot = dirname(__DIR__);
 require_once $siteRoot . '/config/secure_env.php';
+require_once $siteRoot . '/includes/turnstile.php';
 
 function rubyPost(string $key): string
 {
@@ -210,6 +211,10 @@ $messageLength = function_exists('mb_strlen') ? mb_strlen($message) : strlen($me
 if ($name === '' || $nameLength > 120 || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 254 ||
     !preg_match('/^[0-9+\-\s().]{7,30}$/', $phone) || $address === '' || $addressLength > 220 ||
     !in_array($need, $allowedNeeds, true) || $messageLength > 1500) {
+    rubyRedirect('error');
+}
+
+if (TURNSTILE_ENABLED && !verifyInvictaTurnstile('ruby-referral')) {
     rubyRedirect('error');
 }
 

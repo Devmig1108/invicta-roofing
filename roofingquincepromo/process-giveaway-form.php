@@ -22,6 +22,7 @@ declare(strict_types=1);
  */
 
 require_once dirname(__DIR__) . '/config/secure_env.php';
+require_once dirname(__DIR__) . '/includes/turnstile.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     redirectBack('error', 'invalid_request');
@@ -181,18 +182,12 @@ if (!passesRateLimit()) {
     redirectBack('error', 'rate_limited');
 }
 
-// Turnstile verification.
-// Keep TURNSTILE_ENABLED false until the demo domain is configured.
-if (defined('TURNSTILE_ENABLED') && TURNSTILE_ENABLED === true) {
-    $turnstileToken = postValue('cf-turnstile-response');
+if (TURNSTILE_ENABLED && !verifyInvictaTurnstile('giveaway')) {
+    logDebug('turnstile_failed', [
+        'ip' => $_SERVER['REMOTE_ADDR'] ?? '',
+    ]);
 
-    if (!verifyTurnstile($turnstileToken)) {
-        logDebug('turnstile_failed', [
-            'ip' => $_SERVER['REMOTE_ADDR'] ?? '',
-        ]);
-
-        redirectBack('error', 'turnstile_failed');
-    }
+    redirectBack('error', 'turnstile_failed');
 }
 
 /**
@@ -493,46 +488,6 @@ function passesRateLimit(): bool
     file_put_contents($rateFile, json_encode($data, JSON_PRETTY_PRINT), LOCK_EX);
 
     return true;
-}
-
-function verifyTurnstile(string $token): bool
-{
-    if ($token === '') {
-        return false;
-    }
-
-    if (!defined('TURNSTILE_SECRET_KEY') || TURNSTILE_SECRET_KEY === '') {
-        return false;
-    }
-
-    $postData = http_build_query([
-        'secret' => TURNSTILE_SECRET_KEY,
-        'response' => $token,
-        'remoteip' => $_SERVER['REMOTE_ADDR'] ?? '',
-    ]);
-
-    $context = stream_context_create([
-        'http' => [
-            'method' => 'POST',
-            'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
-            'content' => $postData,
-            'timeout' => 8,
-        ],
-    ]);
-
-    $response = file_get_contents(
-        'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-        false,
-        $context
-    );
-
-    if ($response === false) {
-        return false;
-    }
-
-    $result = json_decode($response, true);
-
-    return is_array($result) && !empty($result['success']);
 }
 
 function saveGiveawaySubmission(array $data): void

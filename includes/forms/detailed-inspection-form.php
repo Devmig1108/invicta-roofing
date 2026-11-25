@@ -3,11 +3,14 @@ $detailFormRedirectPath = $detailFormRedirectPath ?? '/index.php';
 $detailFormRedirectAnchor = $detailFormRedirectAnchor ?? 'detailed-inspection-form';
 ?>
 
-<form id="detailed-inspection-form" class="lead-form large-form reveal" action="/process-home-detailed-form.php" method="post">
+<form id="detailed-inspection-form" class="lead-form large-form reveal" action="/process-home-detailed-form.php"
+  method="post">
   <input type="hidden" name="form_token" value="<?= htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8') ?>" />
   <input type="hidden" name="form_type" value="home_detailed_inspection" />
-  <input type="hidden" name="redirect_path" value="<?= htmlspecialchars($detailFormRedirectPath, ENT_QUOTES, 'UTF-8') ?>" />
-  <input type="hidden" name="redirect_anchor" value="<?= htmlspecialchars($detailFormRedirectAnchor, ENT_QUOTES, 'UTF-8') ?>" />
+  <input type="hidden" name="redirect_path"
+    value="<?= htmlspecialchars($detailFormRedirectPath, ENT_QUOTES, 'UTF-8') ?>" />
+  <input type="hidden" name="redirect_anchor"
+    value="<?= htmlspecialchars($detailFormRedirectAnchor, ENT_QUOTES, 'UTF-8') ?>" />
 
   <div class="website-verification-wrap" aria-hidden="true">
     <label>
@@ -36,7 +39,8 @@ $detailFormRedirectAnchor = $detailFormRedirectAnchor ?? 'detailed-inspection-fo
 
   <label>
     Property address
-    <input type="text" name="address" autocomplete="street-address" placeholder="Street address, El Paso, TX" required />
+    <input type="text" name="address" autocomplete="street-address" placeholder="Street address, El Paso, TX"
+      required />
   </label>
 
   <label>
@@ -57,9 +61,14 @@ $detailFormRedirectAnchor = $detailFormRedirectAnchor ?? 'detailed-inspection-fo
 
   <label>
     Notes
-    <textarea name="message" rows="4" placeholder="Tell us about leaks, missing shingles, roof age, visible damage, or maintenance concerns."></textarea>
+    <textarea name="message" rows="4"
+      placeholder="Tell us about leaks, missing shingles, roof age, visible damage, or maintenance concerns."></textarea>
   </label>
 
+  <?php if (TURNSTILE_ENABLED && TURNSTILE_SITE_KEY !== ''): ?>
+    <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars(TURNSTILE_SITE_KEY, ENT_QUOTES, 'UTF-8') ?>"
+      data-action="home-detailed"></div>
+  <?php endif; ?>
   <button class="btn btn-primary btn-full" type="submit">Schedule My Free Inspection</button>
   <p class="form-note">By submitting, you agree to be contacted about your roof inspection request.</p>
 </form>

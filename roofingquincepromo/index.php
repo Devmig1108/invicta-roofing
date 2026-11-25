@@ -450,7 +450,7 @@ $turnstileSiteKey = ($turnstileEnabled && defined('TURNSTILE_SITE_KEY')) ? TURNS
 
           <?php if (!empty($turnstileSiteKey)): ?>
             <div class="turnstile-wrap">
-              <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>"></div>
+              <div class="cf-turnstile" data-action="giveaway" data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>"></div>
             </div>
           <?php endif; ?>
 
