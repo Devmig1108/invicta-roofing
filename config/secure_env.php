@@ -36,7 +36,7 @@ define('ZEPTO_BOUNCE_ADDRESS', 'bounce@bounce-zem.invictaroofs.com');
 /**
  * Testing recipient.
  */
-define('INVICTA_FORM_RECIPIENT', 'ervotech.ep@gmail.com');
+define('INVICTA_FORM_RECIPIENT', 'support@invictaroofs.com');
 
 /**
  * Logs.
