@@ -632,15 +632,22 @@ function redirectHomeForm(string $formKind, string $status, string $reason = '')
         $query['debug_reason'] = $reason;
     }
 
-    $defaultPath = '/index.php';
     $defaultAnchor = $formKind === 'detailed'
         ? 'detailed-inspection-form'
         : 'quick-inspection-form';
 
-    $redirectPath = safeHomeFormRedirectPath(postValue('redirect_path', $defaultPath));
-    $anchor = safeHomeFormAnchor(postValue('redirect_anchor', $defaultAnchor));
+    $redirectPath = safeHomeFormRedirectPath(
+        postValue('redirect_path', '/index.php')
+    );
 
-    header('Location: ' . $redirectPath . '?' . http_build_query($query) . '#' . $anchor, true, 303);
+    $location = $redirectPath . '?' . http_build_query($query);
+
+    if ($formKind !== 'quick' || $status !== 'success') {
+        $anchor = safeHomeFormAnchor(postValue('redirect_anchor', $defaultAnchor));
+        $location .= '#' . $anchor;
+    }
+
+    header('Location: ' . $location, true, 303);
     exit;
 }
 
